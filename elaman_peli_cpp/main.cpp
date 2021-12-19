@@ -6,6 +6,22 @@
 
 using std::string;
 
+void gameOver(std::ostream& output)
+{
+    std::ifstream credits("credits.txt");
+
+    if (credits.is_open())
+    {
+        output << credits.rdbuf() << "\n" << std::endl; // Prints the contents of the file
+    }
+
+    else
+    {
+        output << "\nERROR: ERROR LOADING CREDITS. PLEASE MAKE SURE THAT THE CREDITS FILE IS PLACED IN THE BUILD DIRECTORY.\n" << std::endl;
+        return;
+    }
+}
+
 bool isInputValid (string placeOfBirth)
 {
     for (unsigned i = 0; i < placeOfBirth.length(); i++)
@@ -41,20 +57,18 @@ void childhood(std::ostream& output)
 
 void routeHelsinki(std::ostream& output)
 {
-    output << "Hei Helsingista";
     childhood(output);
 }
 
 void routeTampere(std::ostream& output)
 {
-    output << "Hei Tampereelta";
     childhood(output);
 }
 
 void routeTurku(std::ostream& output)
 {
-    output << "Hei Turusta";
-    childhood(output);
+    output << "\nAre you nuts? Nobody in their right mind would like to be born in Turku...\n" << std::endl;
+    gameOver(output);
 }
 
 void askPlaceOfBirth (string placeOfBirth, std::ostream& output)
@@ -80,10 +94,12 @@ void askPlaceOfBirth (string placeOfBirth, std::ostream& output)
         }
     }
 
-    output << "\nWe got here\n";
-
     int oper = 0;
     oper = std::stoi(placeOfBirth);
+
+//    std::stringstream stringToInt;
+//    stringToInt << placeOfBirth;
+//    stringToInt >> oper;
 
     switch (oper)
     {
@@ -112,15 +128,20 @@ int main()
     string secondarySchool;
     string studies;
 
-    //VARIABLES
+    //OTHER VARIABLES
 
     std::ostream& output = std::cout;
     std::ifstream instructions("instructions.txt");
 
-
     if (instructions.is_open())
     {
         output << instructions.rdbuf() << std::endl; // Prints the contents of the file
+    }
+
+    else
+    {
+        output << "ERROR: ERROR OPENING THE INSTRUCTIONS FILE. PLEASE MAKE SURE THE INSTRUCTIONS FILE IS PLACED IN THE BUILD DIRECTORY." << std::endl;
+        return EXIT_FAILURE;
     }
 
     askName(name, output);

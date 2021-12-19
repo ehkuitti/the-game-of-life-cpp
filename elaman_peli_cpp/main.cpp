@@ -22,7 +22,7 @@ void gameOver(std::ostream& output)
     }
 }
 
-bool isInputValid (string placeOfBirth)
+bool isInputValid (string& placeOfBirth)
 {
     for (unsigned i = 0; i < placeOfBirth.length(); i++)
     {
@@ -57,7 +57,9 @@ void childhood(std::ostream& output)
 
 void routeHelsinki(std::ostream& output)
 {
+    output << "\nWelcome to Helsinki!" << std::endl;
     childhood(output);
+
 }
 
 void routeTampere(std::ostream& output)
@@ -71,7 +73,7 @@ void routeTurku(std::ostream& output)
     gameOver(output);
 }
 
-void askPlaceOfBirth (string placeOfBirth, std::ostream& output)
+void askPlaceOfBirth (string& placeOfBirth, std::ostream& output)
 {
     while (true)
     {
@@ -124,8 +126,8 @@ int main()
     string job_socialWork;
     string name;
     string placeOfBirth;
-    string primarySchool;
-    string secondarySchool;
+    string highSchool;
+    string college;
     string studies;
 
     //OTHER VARIABLES

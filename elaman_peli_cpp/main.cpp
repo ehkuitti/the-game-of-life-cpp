@@ -87,7 +87,12 @@ void askHighSchool (std::ostream& output)
             continue;
         }
 
-        oper = std::stoi(highSchool);
+//        oper = std::stoi(highSchool);
+
+        std::stringstream stringToInt;
+        stringToInt << highSchool;
+        stringToInt >> oper;
+
         if (oper <= 0 || oper >= 4)
         {
             inputSelectionError(output);
@@ -99,10 +104,6 @@ void askHighSchool (std::ostream& output)
             break;
         }
     }
-
-//    std::stringstream stringToInt;
-//    stringToInt << placeOfBirth;
-//    stringToInt >> oper;
 
     switch (oper)
     {
@@ -135,7 +136,6 @@ void childhood(std::ostream& output)
     {
         output << "You're now " << i << " years old" << std::endl;
     }
-
     output << "\nNext you'll decide where you'd apply to after finishing secondary school!" << std::endl;
 }
 
@@ -177,7 +177,11 @@ void askPlaceOfBirth (std::ostream& output)
             continue;
         }
 
-        oper = std::stoi(placeOfBirth);
+        std::stringstream stringToInt;
+        stringToInt << placeOfBirth;
+        stringToInt >> oper;
+
+//        oper = std::stoi(placeOfBirth);
         if (oper <= 0 || oper >= 4)
         {
             inputSelectionError(output);
@@ -190,9 +194,7 @@ void askPlaceOfBirth (std::ostream& output)
         }
     }
 
-//    std::stringstream stringToInt;
-//    stringToInt << placeOfBirth;
-//    stringToInt >> oper;
+
     switch (oper)
     {
         case 1:

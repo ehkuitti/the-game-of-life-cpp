@@ -21,7 +21,8 @@ bool isInputValid (string& placeOfBirth)
 
 void fileCreditsError (std::ostream& output)
 {
-    output << "\nERROR: ERROR LOADING CREDITS. PLEASE MAKE SURE THAT THE CREDITS FILE IS PLACED IN THE BUILD DIRECTORY.\n" << std::endl;
+    output << "ERROR: ERROR LOADING CREDITS. PLEASE MAKE SURE THAT THE CREDITS FILE IS PLACED IN THE BUILD DIRECTORY.\n" << std::endl;
+    exit(1);
 }
 
 void fileInstructionsError (std::ostream& output)
@@ -36,7 +37,7 @@ void inputIntegerError (std::ostream& output)
 
 void inputSelectionError (std::ostream& output)
 {
-    output << "\nERROR: THE INPUT VALUE HAS TO BE 1-3. PLEASE INPUT A NEW VALUE." << std::endl;
+    output << "ERROR: THE INPUT VALUE HAS TO BE 1-3. PLEASE INPUT A NEW VALUE." << std::endl;
 }
 
 void gameOver(std::ostream& output)
@@ -46,7 +47,7 @@ void gameOver(std::ostream& output)
     if (credits.is_open())
     {
         output << credits.rdbuf() << "\n" << std::endl; // Prints the contents of the file
-        return;
+        exit(0);
     }
 
     else
@@ -58,7 +59,7 @@ void gameOver(std::ostream& output)
 
 void routeHighSchool (std::ostream& output)
 {
-    output << "\nGood choice! There's an exam ";
+    output << "\nGood choice! Now you'll have an exam. Good luck! ";
 }
 
 void routeRat (std::ostream& output)
@@ -143,7 +144,6 @@ void routeHelsinki(std::ostream& output)
 {
     output << "\nWelcome to Helsinki!" << std::endl;
     childhood(output);
-
 }
 
 void routeTampere(std::ostream& output)

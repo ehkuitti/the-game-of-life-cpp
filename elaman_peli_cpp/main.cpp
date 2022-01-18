@@ -223,8 +223,9 @@ int main()
 
     std::ostream& output = std::cout;
     std::ifstream instructions("instructions.txt");
+    std::ifstream credits("credits.txt");
 
-    if (instructions.is_open())
+    if (instructions.is_open() && credits.is_open())
     {
         output << instructions.rdbuf() << std::endl; // Prints the contents of the file
     }
@@ -232,6 +233,7 @@ int main()
     else
     {
         fileInstructionsError(output);
+        fileCreditsError(output);
         return EXIT_FAILURE;
     }
 

@@ -235,7 +235,7 @@ int main()
         return EXIT_FAILURE;
     }
 
-    //DIFFERENT QUESTIONS ARE DIVIDED INTO SEPARATE FUNCTIONS
+    //DIFFERENT QUESTIONS ARE SEPARATED INTO SEPARATE FUNCTIONS
     askName(output);
     askPlaceOfBirth(output);
     askHighSchool(output);

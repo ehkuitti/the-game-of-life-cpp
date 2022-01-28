@@ -32,7 +32,7 @@ int welcomeSwitch (int& oper, std::ostream& output, string& name)
             output << "Wow, is it really " << name << " playing this game? I'm honored!" << std::endl;
             break;
         case 7:
-            output << "Wow, it's the " << name << std::endl;
+            output << "Wow, it's the " << name << "!" << std::endl;
             break;
         case 8:
             output << "I never knew you liked this game, " << name << "!" << std::endl;
@@ -170,7 +170,7 @@ void askName (std::ostream& output)
 
     oper = randomRangeGenerator();
 
-    std::cout << "Oper: " << oper << std::endl;
+//    std::cout << "Oper: " << oper << std::endl;
     welcomeSwitch(oper, output, name);
 //    output << name << " is a nice name!" << std::endl;
 }

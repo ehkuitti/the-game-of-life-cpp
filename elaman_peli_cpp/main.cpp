@@ -69,15 +69,15 @@ bool isInputValid (string& placeOfBirth)
     return true;
 }
 
-void fileCreditsError (std::ostream& output)
-{
-    output << "ERROR: ERROR LOADING CREDITS. PLEASE MAKE SURE THAT THE CREDITS FILE IS PLACED IN THE BUILD DIRECTORY.\n" << std::endl;
-    exit(1);
-}
-
 void fileInstructionsError (std::ostream& output)
 {
-    output << "ERROR: ERROR OPENING THE INSTRUCTIONS FILE. PLEASE MAKE SURE THE INSTRUCTIONS FILE IS PLACED IN THE BUILD DIRECTORY." << std::endl;
+    output << "PLEASE MAXIMIZE THIS VIEW/WINDOW" << "\n\n\n"
+           << "INSTALL INSTRUCTIONS \n\nPlease make sure you're using Qt Creator as your IDE as other IDE's aren't supported." << "\n"
+           << "Right click main.cpp on the left hand side and click Show Containing Folder. Copy instructions.txt and credits.txt." << "\n"
+           << "Go up a directory and open the folder Build... Paste the files there, then restart the game. " << "\n"
+           << "If this message shows up again on the next run, you haven't copied the files successfully. Try again." << "\n"
+           << "PLEASE MAKE SURE YOU DON'T RENAME THE FILES. THE PROGRAM RELIES ON THE DEFAULT NAMES AND WILL NOT WORK WITH DIFFERENT FILE NAMES." << "\n\n"
+           << "I hope you enjoy the game! Have fun." << "\n" << std::endl;
 }
 
 void inputIntegerError (std::ostream& output)
@@ -94,17 +94,8 @@ void gameOver(std::ostream& output)
 {
     std::ifstream credits("credits.txt");
 
-    if (credits.is_open())
-    {
-        output << credits.rdbuf() << "\n" << std::endl; // Prints the contents of the file
-        exit(0);
-    }
-
-    else
-    {
-        fileCreditsError(output);
-        return;
-    }
+    output << credits.rdbuf() << "\n" << std::endl; // Prints the contents of the file
+    exit(0);
 }
 
 void routeHighSchool (std::ostream& output)
@@ -289,7 +280,6 @@ int main()
     else
     {
         fileInstructionsError(output);
-        fileCreditsError(output);
         return EXIT_FAILURE;
     }
 

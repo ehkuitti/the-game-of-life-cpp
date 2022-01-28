@@ -71,12 +71,13 @@ bool isInputValid (string& placeOfBirth)
 
 void fileInstructionsError (std::ostream& output)
 {
-    output << "PLEASE MAXIMIZE THIS WINDOW" << "\n\n\n"
-           << "INSTALL INSTRUCTIONS \n\nPlease make sure you're using Qt Creator as your IDE as other IDE's aren't supported." << "\n"
+    output << "PLEASE MAXIMIZE THIS WINDOW" << "\n\n"
+           << "PLEASE MAKE SURE YOU'RE USING QT CREATOR AS YOUR IDE AS OTHER IDE'S AREN'T SUPPORTED.\n\n\n"
+           << "INSTALL INSTRUCTIONS \n\n"
            << "Right click main.cpp on the left hand side and click Show Containing Folder. Copy instructions.txt and credits.txt." << "\n"
            << "Go up a directory and open the folder Build... Paste the files there, then restart the game. " << "\n"
-           << "If this message shows up again on the next run, you haven't copied the files successfully. Try again." << "\n"
-           << "PLEASE MAKE SURE YOU DON'T RENAME THE FILES. THE PROGRAM RELIES ON THE DEFAULT NAMES AND WILL NOT WORK WITH DIFFERENT FILE NAMES." << "\n\n"
+           << "If this message shows up again on the next run, you haven't copied the files successfully. Please try again." << "\n"
+           << "PLEASE MAKE SURE YOU DON'T RENAME THE FILES. THE GAME RELIES ON THE DEFAULT NAMES AND WON'T WORK WITH DIFFERENT FILE NAMES." << "\n\n"
            << "I hope you enjoy the game! Have fun." << "\n" << std::endl;
 }
 

@@ -71,7 +71,7 @@ bool isInputValid (string& placeOfBirth)
 
 void fileInstructionsError (std::ostream& output)
 {
-    output << "PLEASE MAXIMIZE THIS VIEW/WINDOW" << "\n\n\n"
+    output << "PLEASE MAXIMIZE THIS WINDOW" << "\n\n\n"
            << "INSTALL INSTRUCTIONS \n\nPlease make sure you're using Qt Creator as your IDE as other IDE's aren't supported." << "\n"
            << "Right click main.cpp on the left hand side and click Show Containing Folder. Copy instructions.txt and credits.txt." << "\n"
            << "Go up a directory and open the folder Build... Paste the files there, then restart the game. " << "\n"

@@ -6,6 +6,31 @@
 
 using std::string;
 
+void examHighSchool (std::ostream& output)
+{
+    int answer, score = 0;
+
+    output  << "How many species of elephant are there?" << "\n"
+            << "1: 2" << "\n"
+            << "2: 3" << "\n"
+            << "3: 5" << std::endl;
+
+    std::cin >> answer;
+
+    if (answer == 2)
+    {
+        output << "Correct! That was easy :]";
+        score++;
+    }
+
+    else
+    {
+        output << "Incorrect! I thought this was general knowledge... "
+               << "¯\\_(ツ)_/¯\n\n";
+    }
+
+}
+
 int welcomeSwitch (int& oper, std::ostream& output, string& name)
 {
     switch(oper)
@@ -17,34 +42,40 @@ int welcomeSwitch (int& oper, std::ostream& output, string& name)
             output << name << " is a nice name!" << std::endl;
             break;
         case 2:
-            output << name << " is the nicest name I have ever heard!" << std::endl;
+            output << name << " is the nicest name I have ever heard!"
+                   << std::endl;
             break;
         case 3:
             output << name << " is a fine name if you ask me!" << std::endl;
             break;
         case 4:
-            output << name << " has to be the coolest name in existence!" << std::endl;
+            output << name << " has to be the coolest name in existence!"
+                   << std::endl;
             break;
         case 5:
-            output << name << " I've never heard of your name" << std::endl;
+            output << name << ", I've never heard of your name!" << std::endl;
             break;
         case 6:
-            output << "Wow, is it really " << name << " playing this game? I'm honored!" << std::endl;
+            output << "Wow, is it really the " << name
+                   << " playing this game? I'm honored!" << std::endl;
             break;
         case 7:
             output << "Wow, it's the " << name << "!" << std::endl;
             break;
         case 8:
-            output << "I never knew you liked this game, " << name << "!" << std::endl;
+            output << "I never knew you liked this game, "
+                   << name << "!" << std::endl;
             break;
         case 9:
-            output << "It's really you, " << name << ", wow! " << std::endl;
+            output << "It's really you, " << name << ". Wow! " << std::endl;
             break;
         case 10:
-            output << "You can't imagine how lucky you, " << name << ", are playing this rare gem!" << std::endl;
+            output << "You can't imagine how lucky you, " << name
+                   << ", are playing this rare gem!" << std::endl;
             break;
         default:
-            output << "Something went wrong. Please restart the game" << std::endl;
+            output << "Something went wrong. Please restart the game"
+                   << std::endl;
             exit(0);
     }
 
@@ -72,36 +103,49 @@ bool isInputValid (string& placeOfBirth)
 void fileInstructionsError (std::ostream& output)
 {
     output << "PLEASE MAXIMIZE THIS WINDOW" << "\n\n"
-           << "PLEASE MAKE SURE YOU'RE USING QT CREATOR AS YOUR IDE AS OTHER IDE'S AREN'T SUPPORTED.\n\n\n"
+           << "PLEASE MAKE SURE YOU'RE USING QT CREATOR AS YOUR IDE "
+           << "AS OTHER IDE'S AREN'T SUPPORTED.\n\n\n"
            << "INSTALL INSTRUCTIONS \n\n"
-           << "Right click main.cpp on the left hand side and click Show Containing Folder. Copy instructions.txt and credits.txt." << "\n"
-           << "Go up a directory and open the folder Build... Paste the files there, then restart the game. " << "\n"
-           << "If this message shows up again on the next run, you haven't copied the files successfully. Please try again." << "\n"
-           << "PLEASE MAKE SURE YOU DON'T RENAME THE FILES. THE GAME RELIES ON THE DEFAULT NAMES AND WON'T WORK WITH DIFFERENT FILE NAMES." << "\n\n"
+           << "Right click main.cpp on the left hand side "
+           << "and click Show Containing Folder. "
+           << "Copy instructions.txt and credits.txt." << "\n"
+           << "Go up a directory and open the folder Build... "
+           << "Paste the files there, then restart the game. " << "\n"
+           << "If this message shows up again on the next run, "
+           << "you haven't copied the files successfully. "
+           << "Please try again." << "\n"
+           << "PLEASE MAKE SURE YOU DON'T RENAME THE FILES. "
+           << "THE GAME RELIES ON THE DEFAULT NAMES "
+           << "AND WON'T WORK WITH DIFFERENT FILE NAMES." << "\n\n"
            << "I hope you enjoy the game! Have fun." << "\n" << std::endl;
 }
 
 void inputIntegerError (std::ostream& output)
 {
-    output << "ERROR: YOU DIDN'T INPUT AN INTEGER. PLEASE TYPE A NEW VALUE." << std::endl;
+    output << "ERROR: YOU DIDN'T INPUT AN INTEGER. PLEASE TYPE A NEW VALUE."
+           << std::endl;
 }
 
 void inputSelectionError (std::ostream& output)
 {
-    output << "ERROR: THE INPUT VALUE HAS TO BE 1-3. PLEASE INPUT A NEW VALUE." << std::endl;
+    output << "ERROR: THE INPUT VALUE HAS TO BE 1-3. PLEASE INPUT A NEW VALUE."
+           << std::endl;
 }
 
 void gameOver(std::ostream& output)
 {
     std::ifstream credits("credits.txt");
 
-    output << credits.rdbuf() << "\n" << std::endl; // Prints the contents of the file
+    // Prints the contents of the file
+    output << credits.rdbuf() << "\n" << std::endl;
+
     exit(0);
 }
 
 void routeHighSchool (std::ostream& output)
 {
     output << "\nGood choice! Now you'll have an exam. Good luck! ";
+    examHighSchool(output);
 }
 
 void routeRat (std::ostream& output)
@@ -184,7 +228,8 @@ void childhood(std::ostream& output)
     {
         output << "You're now " << i << " years old" << std::endl;
     }
-    output << "\nNext you'll decide where you'd apply to after finishing secondary school!" << std::endl;
+    output << "\nNext you'll decide where you'd apply to after finishing "
+           << "secondary school!" << std::endl;
 }
 
 void routeHelsinki(std::ostream& output)
@@ -200,7 +245,8 @@ void routeTampere(std::ostream& output)
 
 void routeTurku(std::ostream& output)
 {
-    output << "\nAre you nuts? Nobody in their right mind would like to be born in Turku...\n" << std::endl;
+    output << "\nAre you nuts? Nobody in their right mind would like to be "
+           << "born in Turku...\n" << std::endl;
     gameOver(output);
 }
 
@@ -258,7 +304,8 @@ void askPlaceOfBirth (std::ostream& output)
 }
 int main()
 {
-    srand(time(NULL)); //Tekee randomeista randomeita
+    //Tekee randomeista randomeita
+    srand(time(NULL));
     //STRINGS
     string job1;
     string job2;
@@ -275,7 +322,8 @@ int main()
 
     if (instructions.is_open() && credits.is_open())
     {
-        output << instructions.rdbuf() << std::endl; // Prints the contents of the file
+        // Prints the contents of the file
+        output << instructions.rdbuf() << std::endl;
     }
 
     else

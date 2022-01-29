@@ -14,12 +14,11 @@ void examHighSchool (std::ostream& output)
             << "1: 2" << "\n"
             << "2: 3" << "\n"
             << "3: 5" << std::endl;
-
     std::cin >> answer;
 
     if (answer == 2)
     {
-        output << "Correct! That was easy :]";
+        output << "\nCorrect! That was easy :]\n\n";
         score++;
     }
 
@@ -27,6 +26,24 @@ void examHighSchool (std::ostream& output)
     {
         output << "Incorrect! I thought this was general knowledge... "
                << "¯\\_(ツ)_/¯\n\n";
+    }
+
+    output  << "Which of the Disney princesses is seen the least in the movies?"
+            << "\n"
+            << "1: Sleeping Beauty" << "\n"
+            << "2: Jasmine" << "\n"
+            << "3: Snow White" << std::endl;
+    std::cin >> answer;
+
+    if (answer == 1)
+    {
+        output << "Correct! You've done your homework!";
+        score++;
+    }
+
+    else
+    {
+        output << "\nIncorrect! Time to watch more cartoons! =)";
     }
 
 }
@@ -144,7 +161,7 @@ void gameOver(std::ostream& output)
 
 void routeHighSchool (std::ostream& output)
 {
-    output << "\nGood choice! Now you'll have an exam. Good luck! ";
+    output << "\nGood choice! Now you'll have an exam. Good luck! \n\n";
     examHighSchool(output);
 }
 

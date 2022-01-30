@@ -6,6 +6,29 @@
 
 using std::string;
 
+void gameOver(std::ostream& output);
+
+int rouletteValueGenerator ()
+{
+    return (rand() % 4) + 1;
+}
+
+void roulette1 (std::ostream& output)
+{
+    int lethalValue = 0;
+
+    lethalValue = rouletteValueGenerator();
+
+    if (lethalValue == 3)
+    {
+        output << "\nYou tuned your moped to go 100 km/h\n"
+               << "\nYou popped a wheelie and lost control of your moped\n"
+               << "\nYou fall and get damaged\n\n";
+        gameOver(output);
+    }
+
+}
+
 void examVocationalSchool (std::ostream& output)
 {
     int answer, score = 0;
@@ -100,19 +123,19 @@ void examVocationalSchool (std::ostream& output)
 
     if (score == 5)
     {
-        output << "\nYour score is " << score << "/5, "
+        output << "Your score is " << score << "/5, "
                << "you bookworm!";
     }
 
     else if (score > 1 && score < 5)
     {
-        output << "\nYour score is " << score << "/5. "
+        output << "Your score is " << score << "/5. "
                << "You're a perfectly decent person!";
     }
 
     else
     {
-        output << "\nYour score is " << score << "/5. "
+        output << "Your score is " << score << "/5. "
                << "You could've at least tried...";
     }
 
@@ -209,24 +232,24 @@ void examHighSchool (std::ostream& output)
 
     if (answer == 3)
     {
-        output << "\nCorrect! Seems like you drink a lot, eh?";
+        output << "\nCorrect! Seems like you drink a lot, eh?\n\n";
         score++;
     }
     else
     {
-        output << "\nIncorrect! Don't you drink alcohol?";
+        output << "\nIncorrect! Don't you drink alcohol?\n\n";
     }
 
 
     if (score == 5)
     {
-        output << "\nYour score is " << score << "/5, "
+        output << "Your score is " << score << "/5, "
                << "you bookworm!";
     }
 
     else if (score > 1 && score < 5)
     {
-        output << "\nYour score is " << score << "/5. "
+        output << "Your score is " << score << "/5. "
                << "You're a perfectly decent person!";
     }
 
@@ -545,6 +568,7 @@ int main()
     askName(output);
     askPlaceOfBirth(output);
     askHighSchool(output);
+    roulette1(output);
 
     return 0;
 }

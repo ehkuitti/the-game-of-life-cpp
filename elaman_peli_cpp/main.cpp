@@ -6,6 +6,125 @@
 
 using std::string;
 
+void examVocationalSchool (std::ostream& output)
+{
+    int answer, score = 0;
+
+    output  << "When was the first computer invented?" << "\n"
+            << "1) 1929-1931" << "\n"
+            << "2) 1936-1938" << "\n"
+            << "3) 1941-1943" << std::endl;
+    std::cin >> answer;
+
+    if (answer == 2)
+    {
+        output << "\nCorrect! That was easy, wasn't it? :]\n\n";
+        score++;
+    }
+    else
+    {
+        output << "\nIncorrect! I thought this was general knowledge... "
+               << "¯\\_(ツ)_/¯\n\n";
+    }
+
+
+    output  << "Where is the world's oldest surviving tree?" << "\n"
+            << "1) The United States of America" << "\n"
+            << "2) Canada" << "\n"
+            << "3) Germany" << std::endl;
+    std::cin >> answer;
+
+    if (answer == 1)
+    {
+        output << "\nCorrect! The tree is called Methuselah and it's located "
+               << "in California\n\n";
+        score++;
+    }
+    else
+    {
+        output << "\nIncorrect! Time to update your tree knowledge! =)\n\n";
+    }
+
+
+    output << "Don't use a calculator: How much is 34% of 426?\n"
+           << "1) 144.84" << "\n"
+           << "2) 152.61" << "\n"
+           << "3) 159.87" << std::endl;
+    std::cin >> answer;
+
+    if (answer == 1)
+    {
+        output << "\nCorrect! It seems you manage math as well!\n\n";
+        score++;
+    }
+    else
+    {
+        output << "\nIncorrect! I don't think it was really that hard...?\n\n";
+    }
+
+
+    output << "Geography: What is the capital of the Australia?\n"
+           << "1) Wellington" << "\n"
+           << "2) Sydney" << "\n"
+           << "3) Canberra" << std::endl;
+    std::cin >> answer;
+
+    if (answer == 3)
+    {
+        output << "\nCorrect! This one was difficult!\n\n";
+        score++;
+    }
+    else
+    {
+        output << "\nNoppers! Wellington is the capital of New Zealand.\n"
+               << "Sydney is the largest city but not the capital.\n\n";
+    }
+
+
+    output << "Which cocktail is made of rum, coconut cream, & pineapple juice?"
+           << "1) White Russian\n"
+           << "2) Bellini\n"
+           << "3) Pina Colada" << std::endl;
+    std::cin >> answer;
+
+    if (answer == 3)
+    {
+        output << "\nCorrect! Very good taste you have over there!";
+        score++;
+    }
+    else
+    {
+        output << "\nIncorrect! No alcohol for you I suppose.";
+    }
+
+
+    if (score == 5)
+    {
+        output << "\nYour score is " << score << "/5, "
+               << "you bookworm!";
+    }
+
+    else if (score > 1 && score < 5)
+    {
+        output << "\nYour score is " << score << "/5. "
+               << "You're a perfectly decent person!";
+    }
+
+    else
+    {
+        output << "\nYour score is " << score << "/5. "
+               << "You could've at least tried...";
+    }
+
+
+}
+
+void routeVocationalSchool (std::ostream& output)
+{
+    output << "\nGood choice! Now you'll have an exam. Good luck! \n\n";
+    examVocationalSchool(output);
+}
+
 void examHighSchool (std::ostream& output)
 {
     int answer, score = 0;
@@ -287,6 +406,7 @@ void askHighSchool (std::ostream& output)
             routeHighSchool(output);
             break;
         case 2:
+            routeVocationalSchool(output);
             break;
         case 3:
             routeRat(output);

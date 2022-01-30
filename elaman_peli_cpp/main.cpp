@@ -11,9 +11,9 @@ void examHighSchool (std::ostream& output)
     int answer, score = 0;
 
     output  << "How many species of elephant are there?" << "\n"
-            << "1: 2" << "\n"
-            << "2: 3" << "\n"
-            << "3: 5" << std::endl;
+            << "1) 2" << "\n"
+            << "2) 3" << "\n"
+            << "3) 5" << std::endl;
     std::cin >> answer;
 
     if (answer == 2)
@@ -21,30 +21,102 @@ void examHighSchool (std::ostream& output)
         output << "\nCorrect! That was easy :]\n\n";
         score++;
     }
-
     else
     {
-        output << "Incorrect! I thought this was general knowledge... "
+        output << "\nIncorrect! I thought this was general knowledge... "
                << "¯\\_(ツ)_/¯\n\n";
     }
 
+
     output  << "Which of the Disney princesses is seen the least in the movies?"
             << "\n"
-            << "1: Sleeping Beauty" << "\n"
-            << "2: Jasmine" << "\n"
-            << "3: Snow White" << std::endl;
+            << "1) Sleeping Beauty" << "\n"
+            << "2) Jasmine" << "\n"
+            << "3) Snow White" << std::endl;
     std::cin >> answer;
 
     if (answer == 1)
     {
-        output << "Correct! You've done your homework!";
+        output << "\nCorrect! You've done your homework!\n\n";
         score++;
+    }
+    else
+    {
+        output << "\nIncorrect! Time to watch more cartoons! =)\n\n";
+    }
+
+
+    output << "Don't use a calculator: How much is 30% of 546?\n"
+           << "1) 163.8" << "\n"
+           << "2) 166.6" << "\n"
+           << "3) 173.95" << std::endl;
+    std::cin >> answer;
+
+    if (answer == 1)
+    {
+        output << "\nCorrect! It seems you can handle math as well!\n\n";
+        score++;
+    }
+    else
+    {
+        output << "\nIncorrect! Was it really that hard?\n\n";
+    }
+
+
+    output << "Geography: What is the formal name of the capital of the USA?\n"
+           << "1) Washington" << "\n"
+           << "2) Washinton, D.C." << "\n"
+           << "3) Disctrict of Columbia" << std::endl;
+    std::cin >> answer;
+
+    if (answer == 3)
+    {
+        output << "\nCorrect! This one was hard!\n\n";
+        score++;
+    }
+    else
+    {
+        output << "\nNope! Washington is a state in the US West Coast.\n"
+               << "Washington, D.C. is official, *unformal* name.\n\n";
+    }
+
+
+    output << "Which of the following ingredient DOESN'T belong in the "
+           << "Boulevier cocktail?\n"
+           << "1) Whiskey\n"
+           << "2) Campari\n"
+           << "3) Rum" << std::endl;
+    std::cin >> answer;
+
+    if (answer == 3)
+    {
+        output << "\nCorrect! Seems like you drink a lot, eh?";
+        score++;
+    }
+    else
+    {
+        output << "\nIncorrect! Don't you drink alcohol?";
+    }
+
+
+    if (score == 5)
+    {
+        output << "\nYour score is " << score << "/5, "
+               << "you bookworm!";
+    }
+
+    else if (score > 1 && score < 5)
+    {
+        output << "\nYour score is " << score << "/5. "
+               << "You're a perfectly decent person!";
     }
 
     else
     {
-        output << "\nIncorrect! Time to watch more cartoons! =)";
+        output << "\nYour score is " << score << "/5. "
+               << "You could've at least tried...";
     }
+
 
 }
 

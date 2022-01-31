@@ -14,6 +14,13 @@ void routeHighSchool (std::ostream& output);
 void routeVocationalSchool (std::ostream& output);
 void routeRat (std::ostream& output);
 
+void vandalism (std::ostream& output)
+{
+    output << "\nWould you like to participate in vandalism?\n"
+           << "1) Yes\n"
+           << "2) No\n";
+}
+
 void economicsStudies (std::ostream& output)
 {
     output << "\nYou've got to be kidding me...\n\n";
@@ -114,7 +121,7 @@ void uniColManager (std::ostream& output)
             socialStudies(output);
             break;
         case 3:
-            routeRat(output);
+            economicsStudies(output);
             break;
     }
 }
@@ -164,10 +171,10 @@ void uoasManager (std::ostream& output)
             itStudies(output);
             break;
         case 2:
-            routeVocationalSchool(output);
+            socialStudies(output);
             break;
         case 3:
-            routeRat(output);
+            economicsStudies(output);
             break;
     }
 
@@ -793,6 +800,8 @@ int main()
     highSchoolManager(output);
     roulette1(output);
     collegeManager(output);
+    vandalism(output);
+
 
     return 0;
 }

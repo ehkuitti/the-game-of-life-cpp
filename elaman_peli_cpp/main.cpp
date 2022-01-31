@@ -6,7 +6,224 @@
 
 using std::string;
 
+//Method stubs for functions further down the program
 void gameOver(std::ostream& output);
+bool isInputValid (string& placeOfBirth);
+void inputSelectionError (std::ostream& output);
+void routeHighSchool (std::ostream& output);
+void routeVocationalSchool (std::ostream& output);
+void routeRat (std::ostream& output);
+
+void economicsStudies (std::ostream& output)
+{
+    output << "\nYou've got to be kidding me...\n\n";
+    gameOver(output);
+}
+
+void socialStudies (std::ostream& output)
+{
+    bool isStudying = true;
+    int studyYear = 0;
+
+    output << "\nThis is also an important field!\n\n";
+
+    while (isStudying)
+    {
+        if (studyYear == 5)
+        {
+            isStudying = false;
+        }
+
+        else
+        {
+            studyYear++;
+            output << "And so went your study year " << studyYear
+                   << " in college.\n";
+        }
+    }
+}
+
+void itStudies (std::ostream& output)
+{
+    bool isStudying = true;
+    int studyYear = 0;
+
+    output << "\nCorrect!\n\n";
+
+    while (isStudying)
+    {
+        if (studyYear == 5)
+        {
+            isStudying = false;
+        }
+
+        else
+        {
+            studyYear++;
+            output << "And so went your study year " << studyYear
+                   << " in college.\n";
+        }
+    }
+}
+
+void uniColManager (std::ostream& output)
+{
+    string uniCol;
+    int oper = 0;
+
+    while (true)
+    {
+        output << "\n\nGreat choice! Studies await.\n\n"
+               << "What'd you like to study?\n"
+               << "1) Information Technology\n"
+               << "2) Social Sciences\n"
+               << "3) Economics\n";
+        std::getline(std::cin, uniCol);
+
+        bool isValueValid = isInputValid(uniCol);
+        if (!isValueValid)
+        {
+            output << "" << std::endl;
+            continue;
+        }
+
+//        oper = std::stoi(highSchool);
+
+        std::stringstream stringToInt;
+        stringToInt << uniCol;
+        stringToInt >> oper;
+
+        if (oper <= 0 || oper >= 4)
+        {
+            inputSelectionError(output);
+            continue;
+        }
+
+        else
+        {
+            break;
+        }
+    }
+
+    switch (oper)
+    {
+        case 1:
+            itStudies(output);
+            break;
+        case 2:
+            socialStudies(output);
+            break;
+        case 3:
+            routeRat(output);
+            break;
+    }
+}
+
+void uoasManager (std::ostream& output)
+{
+    string uOAS;
+    int oper = 0;
+
+    while (true)
+    {
+        output << "\n\nGreat choice! Studies await.\n\n"
+               << "What'd you like to study?\n"
+               << "1) Information Technology\n"
+               << "2) Social Sciences\n"
+               << "3) Economics\n";
+        std::getline(std::cin, uOAS);
+
+        bool isValueValid = isInputValid(uOAS);
+        if (!isValueValid)
+        {
+            output << "" << std::endl;
+            continue;
+        }
+
+//        oper = std::stoi(highSchool);
+
+        std::stringstream stringToInt;
+        stringToInt << uOAS;
+        stringToInt >> oper;
+
+        if (oper <= 0 || oper >= 4)
+        {
+            inputSelectionError(output);
+            continue;
+        }
+
+        else
+        {
+            break;
+        }
+    }
+
+    switch (oper)
+    {
+        case 1:
+            itStudies(output);
+            break;
+        case 2:
+            routeVocationalSchool(output);
+            break;
+        case 3:
+            routeRat(output);
+            break;
+    }
+
+}
+
+void collegeManager (std::ostream& output)
+{
+    string college;
+    int oper = 0;
+
+    while (true)
+    {
+        output << "Where would you like to apply to? " << std::endl
+               << "1: University (College)" << std::endl
+               << "2: University of Applied Sciences" << std::endl
+               << "3: Rat" << std::endl;
+        std::getline(std::cin, college);
+
+        bool isValueValid = isInputValid(college);
+        if (!isValueValid)
+        {
+            output << "" << std::endl;
+            continue;
+        }
+
+//        oper = std::stoi(highSchool);
+
+        std::stringstream stringToInt;
+        stringToInt << college;
+        stringToInt >> oper;
+
+        if (oper <= 0 || oper >= 4)
+        {
+            inputSelectionError(output);
+            continue;
+        }
+
+        else
+        {
+            break;
+        }
+    }
+
+    switch (oper)
+    {
+        case 1:
+            uniColManager(output); //University (College)
+            break;
+        case 2:
+            uoasManager(output); //University of Applied Sciences
+            break;
+        case 3:
+            routeRat(output);
+            break;
+    }
+}
 
 int rouletteValueGenerator ()
 {
@@ -124,19 +341,19 @@ void examVocationalSchool (std::ostream& output)
     if (score == 5)
     {
         output << "Your score is " << score << "/5, "
-               << "you bookworm!";
+               << "you bookworm!\n";
     }
 
     else if (score > 1 && score < 5)
     {
         output << "Your score is " << score << "/5. "
-               << "You're a perfectly decent person!";
+               << "You're a perfectly decent person!\n";
     }
 
     else
     {
         output << "Your score is " << score << "/5. "
-               << "You could've at least tried...";
+               << "You could've at least tried...\n";
     }
 
 
@@ -144,7 +361,12 @@ void examVocationalSchool (std::ostream& output)
 
 void routeVocationalSchool (std::ostream& output)
 {
-    output << "\nGood choice! Now you'll have an exam. Good luck! \n\n";
+    output << "\nGood choice! Now you'll have an exam. "
+           << "\n\n"
+           << "INPUTTING A VALUE NOT ON THE LIST IS CONSIDERED "
+           << "AN INCORRECT ANSWER."
+           << "\n\n"
+           << "Good luck! \n\n";
     examVocationalSchool(output);
 }
 
@@ -259,6 +481,8 @@ void examHighSchool (std::ostream& output)
                << "You could've at least tried...";
     }
 
+    output << "\n\nYou graduated from High School and "
+           << "arranged a huge party!\n\n";
 
 }
 
@@ -359,7 +583,8 @@ void inputIntegerError (std::ostream& output)
 
 void inputSelectionError (std::ostream& output)
 {
-    output << "ERROR: THE INPUT VALUE HAS TO BE 1-3. PLEASE INPUT A NEW VALUE."
+    output << "\nERROR: THE INPUT VALUE HAS TO BE 1-3. "
+           << "PLEASE INPUT A NEW VALUE.\n"
            << std::endl;
 }
 
@@ -375,7 +600,12 @@ void gameOver(std::ostream& output)
 
 void routeHighSchool (std::ostream& output)
 {
-    output << "\nGood choice! Now you'll have an exam. Good luck! \n\n";
+    output << "\nGood choice! Now you'll have an exam. "
+           << "\n\n"
+           << "INPUTTING A VALUE NOT ON THE LIST IS CONSIDERED "
+           << "AN INCORRECT ANSWER. "
+           << "\n\n"
+           << "Good luck! \n\n";
     examHighSchool(output);
 }
 
@@ -385,7 +615,7 @@ void routeRat (std::ostream& output)
     gameOver(output);
 }
 
-void askHighSchool (std::ostream& output)
+void highSchoolManager (std::ostream& output)
 {
     string highSchool;
     int oper = 0;
@@ -538,13 +768,6 @@ int main()
 {
     //Tekee randomeista randomeita
     srand(time(NULL));
-    //STRINGS
-    string job1;
-    string job2;
-    string job_bachelorOfBusinessIT;
-    string job_socialWork;
-    string college;
-    string studies;
 
     //OTHER VARIABLES
 
@@ -567,8 +790,9 @@ int main()
     //DIFFERENT QUESTIONS ARE SEPARATED INTO SEPARATE FUNCTIONS
     askName(output);
     askPlaceOfBirth(output);
-    askHighSchool(output);
+    highSchoolManager(output);
     roulette1(output);
+    collegeManager(output);
 
     return 0;
 }

@@ -1,4 +1,4 @@
-# the-game-of-life-cpp - a command line game
+# The Game of Life - a command line game
 
 This project is a remake of me and my friends' The Game Of Life ([Elämän Peli](https://github.com/ehkuitti/elaman-peli-java)) school game project. That project
 was a school project for the course "The Basics of Programming" I took in my school, Laurea University of Applied Sciences. The idea of the original project was to

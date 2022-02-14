@@ -7,7 +7,11 @@ accidents that can lead to the player character dying. Basically its' purporse i
 
 The reason I started the rewriting is because of taking a C++ course from Tampere University's "open" course offering (Finnish: avoin yliopisto).
 
-## Implementation & improvements
+## Implementation
+
+This project is made with Qt Creator 5.12 and C++17 using MinGW. Recently I've started to move over to Linux Mint for faster compiling times.
+
+## Improvements
 
 This game is written from ground up using C++17 so the performance will be slighly improved. There are also certain improvements on top of the original. For instance,
 this version always validates the user's input, e.g. if the required input type is integers, the program will produce an error if letters are found. It also has 

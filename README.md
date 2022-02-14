@@ -7,9 +7,13 @@ accidents that can lead to the player character dying. Basically its' purporse i
 
 The reason I started the rewriting is because of taking a C++ course from Tampere University's "open" course offering (Finnish: avoin yliopisto).
 
-## Improvements
+## Implementation & improvements
 
 This game is written from ground up using C++17 so the performance will be slighly improved. There are also certain improvements on top of the original. For instance,
 this version always validates the user's input, e.g. if the required input type is integers, the program will produce an error if letters are found. It also has 
 some small improvements, like randomly generated welcome messages using `switch` and `srand`. The C++ version also has improved install and playing instructions
 which are read using `std::ifstream` from a text file in the build directory. 
+
+## Additional notes
+
+The commit messages are primarily in Finnish for now due to it being my mother tongue. I'm considering changing the commit language to English. This is to make it easier for international developers to follow what the project is up to, in case more people become interested in it.

@@ -9,7 +9,7 @@ The reason I started the rewriting is because of taking a C++ course from Tamper
 
 ## Implementation
 
-This project is made with Qt Creator 5.12 and C++17 using MinGW. Recently I've started to move over to Linux Mint for faster compiling times.
+This project is made with Qt Creator 5.12 and C++17 using MinGW. Recently I've started to move over to Linux Mint for faster compile times.
 
 ## Improvements
 

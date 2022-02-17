@@ -13,11 +13,10 @@ This project is made with Qt Creator 5.12 and C++17 using MinGW. Recently I've s
 
 ## Improvements
 
-This game is written from ground up using C++17 so the performance will be slighly improved. There are also certain improvements on top of the original. For instance,
-this version always validates the user's input, e.g. if the required input type is integers, the program will produce an error if letters are found. It also has 
-some small improvements, like randomly generated welcome messages using `switch` and `srand`. The C++ version also has improved install and playing instructions
-which are read using `std::ifstream` from a text file in the build directory. 
+This game is written from the ground up using C++17, so the performance will be slighly improved. There are also certain improvements on top of the original. For instance,
+this version always validates the user's input, e.g. if the required input type is an integer, the program will print an error if the input contains letters. It also has 
+some minor improvements, like randomly generated welcome messages using `switch` and `srand`. The C++ version also comes with installation and playing instructions, which are read using `std::ifstream` from a text file within the build directory. 
 
 ## Additional notes
 
-The commit messages are primarily in Finnish for now due to it being my mother tongue. I'm considering changing the commit language to English. This is to make it easier for international developers to follow what the project is up to, in case more people become interested in it.
+The commit messages are mainly in Finnish, for now, due to it being my mother tongue. I'm considering changing the commit language to English in future releases. This is to make it easier for international developers to follow what the project is up to, in case of more people becoming interested in it.

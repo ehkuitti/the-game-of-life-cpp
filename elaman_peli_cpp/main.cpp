@@ -6,16 +6,6 @@
 
 using std::string;
 
-int stringToInt (string selection, int oper)
-{
-    std::stringstream valueToInt;
-    valueToInt << selection;
-    valueToInt >> oper;
-
-    return oper;
-
-}
-
 //Method stubs for functions further down the program
 void gameOver(std::ostream& output);
 bool isInputValid (string& placeOfBirth);
@@ -23,6 +13,20 @@ void inputSelectionError (std::ostream& output);
 void routeHighSchool (std::ostream& output);
 void routeVocationalSchool (std::ostream& output);
 void routeRat (std::ostream& output);
+
+void collegeStudyYearPrinter (int studyYear)
+{
+    std::cout << "And so went your study year " << studyYear << " in college.";
+}
+
+int stringToInt (string selection, int oper)
+{
+    std::stringstream valueToInt;
+    valueToInt << selection;
+    valueToInt >> oper;
+
+    return oper;
+}
 
 void vandalism (std::ostream& output)
 {
@@ -54,8 +58,7 @@ void socialStudies (std::ostream& output)
         else
         {
             studyYear++;
-            output << "And so went your study year " << studyYear
-                   << " in college.\n";
+            collegeStudyYearPrinter(studyYear);
         }
     }
 }
@@ -77,8 +80,7 @@ void itStudies (std::ostream& output)
         else
         {
             studyYear++;
-            output << "And so went your study year " << studyYear
-                   << " in college.\n";
+            collegeStudyYearPrinter(studyYear);
         }
     }
 }

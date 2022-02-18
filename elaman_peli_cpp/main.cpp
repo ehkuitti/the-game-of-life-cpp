@@ -6,6 +6,16 @@
 
 using std::string;
 
+int stringToInt (string selection, int oper)
+{
+    std::stringstream valueToInt;
+    valueToInt << selection;
+    valueToInt >> oper;
+
+    return oper;
+
+}
+
 //Method stubs for functions further down the program
 void gameOver(std::ostream& output);
 bool isInputValid (string& placeOfBirth);
@@ -94,11 +104,7 @@ void uniColManager (std::ostream& output)
             continue;
         }
 
-//        oper = std::stoi(highSchool);
-
-        std::stringstream stringToInt;
-        stringToInt << uniCol;
-        stringToInt >> oper;
+        oper = stringToInt(uniCol, oper);
 
         if (oper <= 0 || oper >= 4)
         {
@@ -147,11 +153,7 @@ void uoasManager (std::ostream& output)
             continue;
         }
 
-//        oper = std::stoi(highSchool);
-
-        std::stringstream stringToInt;
-        stringToInt << uOAS;
-        stringToInt >> oper;
+        oper = stringToInt(uOAS, oper);
 
         if (oper <= 0 || oper >= 4)
         {
@@ -200,11 +202,7 @@ void collegeManager (std::ostream& output)
             continue;
         }
 
-//        oper = std::stoi(highSchool);
-
-        std::stringstream stringToInt;
-        stringToInt << college;
-        stringToInt >> oper;
+        oper = stringToInt(college, oper);
 
         if (oper <= 0 || oper >= 4)
         {
@@ -642,11 +640,7 @@ void highSchoolManager (std::ostream& output)
             continue;
         }
 
-//        oper = std::stoi(highSchool);
-
-        std::stringstream stringToInt;
-        stringToInt << highSchool;
-        stringToInt >> oper;
+        oper = stringToInt(highSchool, oper);
 
         if (oper <= 0 || oper >= 4)
         {
@@ -739,11 +733,8 @@ void askPlaceOfBirth (std::ostream& output)
             continue;
         }
 
-        std::stringstream stringToInt;
-        stringToInt << placeOfBirth;
-        stringToInt >> oper;
+        oper = stringToInt(placeOfBirth, oper);
 
-//        oper = std::stoi(placeOfBirth);
         if (oper <= 0 || oper >= 4)
         {
             inputSelectionError(output);

@@ -14,12 +14,30 @@ void routeHighSchool (std::ostream& output);
 void routeVocationalSchool (std::ostream& output);
 void routeRat (std::ostream& output);
 
-void collegeStudyYearPrinter (int studyYear)
+void collegeFieldWelcomer (string field, std::ostream& output)
 {
-    std::cout << "And so went your study year " << studyYear << " in college.";
+    if (field == "IT")
+    {
+        output << "\nCorrect!\n\n";
+    }
+
+    else if (field == "social")
+    {
+        output << "\nThis is also an important field!\n\n";
+    }
+
+    else
+    {
+        output << "\nYou've got to be kidding me...\n\n";
+    }
 }
 
-int stringToInt (string selection, int oper)
+void collegeStudyYearPrinter (int& studyYear, std::ostream& output)
+{
+    output << "And so went your study year " << studyYear << " in college.";
+}
+
+int stringToInt (string& selection, int& oper)
 {
     std::stringstream valueToInt;
     valueToInt << selection;
@@ -37,7 +55,8 @@ void vandalism (std::ostream& output)
 
 void economicsStudies (std::ostream& output)
 {
-    output << "\nYou've got to be kidding me...\n\n";
+    string field = "economics";
+    collegeFieldWelcomer(field, output);
     gameOver(output);
 }
 
@@ -45,8 +64,9 @@ void socialStudies (std::ostream& output)
 {
     bool isStudying = true;
     int studyYear = 0;
+    string field = "social";
 
-    output << "\nThis is also an important field!\n\n";
+    collegeFieldWelcomer(field, output);
 
     while (isStudying)
     {
@@ -58,7 +78,7 @@ void socialStudies (std::ostream& output)
         else
         {
             studyYear++;
-            collegeStudyYearPrinter(studyYear);
+            collegeStudyYearPrinter(studyYear, output);
         }
     }
 }
@@ -67,8 +87,9 @@ void itStudies (std::ostream& output)
 {
     bool isStudying = true;
     int studyYear = 0;
+    string field = "IT";
 
-    output << "\nCorrect!\n\n";
+    collegeFieldWelcomer(field, output);
 
     while (isStudying)
     {
@@ -80,7 +101,7 @@ void itStudies (std::ostream& output)
         else
         {
             studyYear++;
-            collegeStudyYearPrinter(studyYear);
+            collegeStudyYearPrinter(studyYear, output);
         }
     }
 }

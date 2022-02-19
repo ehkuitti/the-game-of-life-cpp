@@ -7,6 +7,7 @@
 using std::string;
 
 //Method stubs for functions further down the program
+void collegeStudyYearPrinter(int& studyYear, std::ostream& output);
 void gameOver(std::ostream& output);
 bool isInputValid (string& placeOfBirth);
 void inputSelectionError (std::ostream& output);
@@ -14,7 +15,28 @@ void routeHighSchool (std::ostream& output);
 void routeVocationalSchool (std::ostream& output);
 void routeRat (std::ostream& output);
 
-void collegeFieldWelcomer (string field, std::ostream& output)
+void whileInCollege (std::ostream& output)
+{
+    int studyYear = 0;
+    bool isStudying = true;
+
+    while (isStudying)
+    {
+        if (studyYear == 5)
+        {
+            isStudying = false;
+        }
+
+        else
+        {
+            studyYear++;
+            collegeStudyYearPrinter(studyYear, output);
+        }
+    }
+
+}
+
+void collegeFieldWelcomer (string& field, std::ostream& output)
 {
     if (field == "IT")
     {
@@ -62,48 +84,17 @@ void economicsStudies (std::ostream& output)
 
 void socialStudies (std::ostream& output)
 {
-    bool isStudying = true;
-    int studyYear = 0;
     string field = "social";
-
     collegeFieldWelcomer(field, output);
+    whileInCollege(output);
 
-    while (isStudying)
-    {
-        if (studyYear == 5)
-        {
-            isStudying = false;
-        }
-
-        else
-        {
-            studyYear++;
-            collegeStudyYearPrinter(studyYear, output);
-        }
-    }
 }
 
 void itStudies (std::ostream& output)
 {
-    bool isStudying = true;
-    int studyYear = 0;
     string field = "IT";
-
     collegeFieldWelcomer(field, output);
-
-    while (isStudying)
-    {
-        if (studyYear == 5)
-        {
-            isStudying = false;
-        }
-
-        else
-        {
-            studyYear++;
-            collegeStudyYearPrinter(studyYear, output);
-        }
-    }
+    whileInCollege(output);
 }
 
 void uniColManager (std::ostream& output)
@@ -815,7 +806,6 @@ int main()
     roulette1(output);
     collegeManager(output);
     vandalism(output);
-
 
     return 0;
 }

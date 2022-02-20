@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 
+// Makes it possible to use string without typing std:: in the beginning
 using std::string;
 
 //Method stubs for functions further down the program

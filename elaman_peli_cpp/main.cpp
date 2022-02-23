@@ -68,17 +68,17 @@ void collegeFieldWelcomer (string& field, std::ostream& output)
 {
     if (field == "IT")
     {
-        output << "\nCorrect!\n\n";
+        output << "\nCorrect!\n" << std::endl;
     }
 
     else if (field == "social")
     {
-        output << "\nThis is also an important field!\n\n";
+        output << "\nThis is also an important field!\n" << std::endl;
     }
 
     else
     {
-        output << "\nYou've got to be kidding me...\n\n";
+        output << "\nYou've got to be kidding me...\n" << std::endl;
     }
 }
 
@@ -98,9 +98,9 @@ int stringToInt (string& selection, int& oper)
 
 void vandalism (std::ostream& output)
 {
-    output << "\nWould you like to participate in vandalism?\n"
-           << "1) Yes\n"
-           << "2) No\n";
+    output << "\nWould you like to participate in vandalism?" << std::endl
+           << "1) Yes" << std::endl
+           << "2) No" << std::endl;
 }
 
 void economicsStudies (std::ostream& output)
@@ -132,17 +132,17 @@ void uniColManager (std::ostream& output)
 
     while (true)
     {
-        output << "\n\nGreat choice! Studies await.\n\n"
-               << "What'd you like to study?\n"
-               << "1) Information Technology\n"
-               << "2) Social Sciences\n"
-               << "3) Economics\n";
+        output << "\n\nGreat choice! Studies await.\n" << std::endl
+               << "What'd you like to study?" << std::endl
+               << "1) Information Technology" << std::endl
+               << "2) Social Sciences" << std::endl
+               << "3) Economics" << std::endl;
         std::getline(std::cin, uniCol);
 
         bool isValueValid = isInputValid(uniCol);
         if (!isValueValid)
         {
-            output << "" << "\n";
+            output << "" << std::endl;
             continue;
         }
 
@@ -181,17 +181,17 @@ void uoasManager (std::ostream& output)
 
     while (true)
     {
-        output << "\n\nGreat choice! Studies await.\n\n"
-               << "What'd you like to study?\n"
-               << "1) Information Technology\n"
-               << "2) Social Sciences\n"
-               << "3) Economics\n";
+        output << "\n\nGreat choice! Studies await." << std::endl
+               << "What'd you like to study?" << std::endl
+               << "1) Information Technology" << std::endl
+               << "2) Social Sciences" << std::endl
+               << "3) Economics" << std::endl;
         std::getline(std::cin, uOAS);
 
         bool isValueValid = isInputValid(uOAS);
         if (!isValueValid)
         {
-            output << "" << "\n";
+            output << "" << std::endl;
             continue;
         }
 
@@ -231,16 +231,16 @@ void collegeManager (std::ostream& output)
 
     while (true)
     {
-        output << "Where would you like to apply to? " << "\n"
-               << "1: University (College)" << "\n"
-               << "2: University of Applied Sciences" << "\n"
-               << "3: Rat" << "\n";
+        output << "Where would you like to apply to? " << std::endl
+               << "1: University (College)" << std::endl
+               << "2: University of Applied Sciences" << std::endl
+               << "3: Rat" << std::endl;
         std::getline(std::cin, college);
 
         bool isValueValid = isInputValid(college);
         if (!isValueValid)
         {
-            output << "" << "\n";
+            output << "" << std::endl;
             continue;
         }
 
@@ -285,9 +285,10 @@ void roulette1 (std::ostream& output)
 
     if (lethalValue == 3)
     {
-        output << "\nYou tuned your moped to go 100 km/h\n"
-               << "\nYou popped a wheelie and lost control of your moped\n"
-               << "\nYou fall and get damaged\n\n";
+        output << "\nYou tuned your moped to go 100 km/h" << std::endl
+               << "\nYou popped a wheelie and lost control of your moped"
+               << std::endl
+               << "\nYou fall and get damaged\n" << std::endl;
         gameOver(output);
     }
 
@@ -297,81 +298,85 @@ void examVocationalSchool (std::ostream& output)
 {
     int answer, score = 0;
 
-    output  << "When was the first computer invented?" << "\n"
-            << "1) 1929-1931" << "\n"
-            << "2) 1936-1938" << "\n"
-            << "3) 1941-1943" << "\n";
+    output  << "When was the first computer invented?" << std::endl
+            << "1) 1929-1931" << std::endl
+            << "2) 1936-1938" << std::endl
+            << "3) 1941-1943" << std::endl;
     std::cin >> answer;
 
     if (answer == 2)
     {
-        output << "\nCorrect! That was easy, wasn't it? :]\n\n";
+        output << "\nCorrect! That was easy, wasn't it? :]\n" << std::endl;
         score++;
     }
     else
     {
         output << "\nIncorrect! I thought this was general knowledge... "
-               << "¯\\_(ツ)_/¯\n\n";
+               << "¯\\_(ツ)_/¯\n" << std::endl;
     }
 
 
-    output  << "Where is the world's oldest surviving tree?" << "\n"
-            << "1) The United States of America" << "\n"
-            << "2) Canada" << "\n"
-            << "3) Germany" << "\n";
+    output  << "Where is the world's oldest surviving tree?" << std::endl
+            << "1) The United States of America" << std::endl
+            << "2) Canada" << std::endl
+            << "3) Germany" << std::endl;
     std::cin >> answer;
 
     if (answer == 1)
     {
         output << "\nCorrect! The tree is called Methuselah and it's located "
-               << "in California\n\n";
+               << "in California\n" << std::endl;
         score++;
     }
     else
     {
-        output << "\nIncorrect! Time to update your tree knowledge! =)\n\n";
+        output << "\nIncorrect! Time to update your tree knowledge! =) "
+               << std::endl;
     }
 
 
-    output << "Don't use a calculator: How much is 34% of 426?\n"
-           << "1) 144.84" << "\n"
-           << "2) 152.61" << "\n"
-           << "3) 159.87" << "\n";
+    output << "Don't use a calculator: How much is 34% of 426?" << std::endl
+           << "1) 144.84" << std::endl
+           << "2) 152.61" << std::endl
+           << "3) 159.87" << std::endl;
     std::cin >> answer;
 
     if (answer == 1)
     {
-        output << "\nCorrect! It seems you manage math as well!\n\n";
+        output << "\nCorrect! It seems you manage math as well!\n" << std::endl;
         score++;
     }
     else
     {
-        output << "\nIncorrect! I don't think it was really that hard...?\n\n";
+        output << "\nIncorrect! I don't think it was really that hard...?\n"
+               << std::endl;
     }
 
 
-    output << "Geography: What is the capital of the Australia?\n"
-           << "1) Wellington" << "\n"
-           << "2) Sydney" << "\n"
-           << "3) Canberra" << "\n";
+    output << "Geography: What is the capital of the Australia?" << std::endl
+           << "1) Wellington" << std::endl
+           << "2) Sydney" << std::endl
+           << "3) Canberra" << std::endl;
     std::cin >> answer;
 
     if (answer == 3)
     {
-        output << "\nCorrect! This one was difficult!\n\n";
+        output << "\nCorrect! This one was difficult!\n" << std::endl;
         score++;
     }
     else
     {
-        output << "\nNoppers! Wellington is the capital of New Zealand.\n"
-               << "Sydney is the largest city but not the capital.\n\n";
+        output << "\nNoppers! Wellington is the capital of New Zealand."
+               << std::endl
+               << "Sydney is the largest city but not the capital.\n"
+               << std::endl;
     }
 
 
     output << "Which cocktail is made of rum, coconut cream, & pineapple juice?"
-           << "1) White Russian\n"
-           << "2) Bellini\n"
-           << "3) Pina Colada" << "\n";
+           << "1) White Russian" << std::endl
+           << "2) Bellini" << std::endl
+           << "3) Pina Colada" << std::endl;
     std::cin >> answer;
 
     if (answer == 3)
@@ -388,19 +393,19 @@ void examVocationalSchool (std::ostream& output)
     if (score == 5)
     {
         output << "Your score is " << score << "/5, "
-               << "you bookworm!\n";
+               << "you bookworm!" << std::endl;
     }
 
     else if (score > 1 && score < 5)
     {
         output << "Your score is " << score << "/5. "
-               << "You're a perfectly decent person!\n";
+               << "You're a perfectly decent person!" << std::endl;
     }
 
     else
     {
         output << "Your score is " << score << "/5. "
-               << "You could've at least tried...\n";
+               << "You could've at least tried..." << std::endl;
     }
 
 
@@ -409,11 +414,11 @@ void examVocationalSchool (std::ostream& output)
 void routeVocationalSchool (std::ostream& output)
 {
     output << "\nGood choice! Now you'll have an exam. "
-           << "\n\n"
+           << std::endl << std::endl
            << "INPUTTING A VALUE NOT ON THE LIST IS CONSIDERED "
            << "AN INCORRECT ANSWER."
-           << "\n\n"
-           << "Good luck! \n\n";
+           << std::endl << std::endl
+           << "Good luck! \n" << std::endl;
     examVocationalSchool(output);
 }
 
@@ -421,63 +426,65 @@ void examHighSchool (std::ostream& output)
 {
     int answer, score = 0;
 
-    output  << "How many species of elephant are there?" << "\n"
-            << "1) 2" << "\n"
-            << "2) 3" << "\n"
-            << "3) 5" << "\n";
+    output  << "How many species of elephant are there?" << std::endl
+            << "1) 2" << std::endl
+            << "2) 3" << std::endl
+            << "3) 5" << std::endl;
     std::cin >> answer;
 
     if (answer == 2)
     {
-        output << "\nCorrect! That was easy :]\n\n";
+        output << "\nCorrect! That was easy :]\n" << std::endl;
         score++;
     }
     else
     {
         output << "\nIncorrect! I thought this was general knowledge... "
-               << "¯\\_(ツ)_/¯\n\n";
+               << "¯\\_(ツ)_/¯\n" << std::endl;
     }
 
 
     output  << "Which of the Disney princesses is seen the least in the movies?"
-            << "\n"
-            << "1) Sleeping Beauty" << "\n"
-            << "2) Jasmine" << "\n"
-            << "3) Snow White" << "\n";
+            << std::endl
+            << "1) Sleeping Beauty" << std::endl
+            << "2) Jasmine" << std::endl
+            << "3) Snow White" << std::endl;
     std::cin >> answer;
 
     if (answer == 1)
     {
-        output << "\nCorrect! You've done your homework!\n\n";
+        output << "\nCorrect! You've done your homework!\n" << std::endl;
         score++;
     }
     else
     {
-        output << "\nIncorrect! Time to watch more cartoons! =)\n\n";
+        output << "\nIncorrect! Time to watch more cartoons! =)\n" << std::endl;
     }
 
 
-    output << "Don't use a calculator: How much is 30% of 546?\n"
-           << "1) 163.8" << "\n"
-           << "2) 166.6" << "\n"
-           << "3) 173.95" << "\n";
+    output << "Don't use a calculator: How much is 30% of 546?" << std::endl
+           << "1) 163.8" << std::endl
+           << "2) 166.6" << std::endl
+           << "3) 173.95" << std::endl;
     std::cin >> answer;
 
     if (answer == 1)
     {
-        output << "\nCorrect! It seems you can handle math as well!\n\n";
+        output << "\nCorrect! It seems you can handle math as well!\n"
+               << std::endl;
         score++;
     }
     else
     {
-        output << "\nIncorrect! Was it really that hard?\n\n";
+        output << "\nIncorrect! Was it really that hard?\n"
+               << std::endl;
     }
 
 
     output << "Geography: What is the formal name of the capital of the USA?\n"
-           << "1) Washington" << "\n"
-           << "2) Washinton, D.C." << "\n"
-           << "3) Disctrict of Columbia" << "\n";
+           << "1) Washington" << std::endl
+           << "2) Washinton, D.C." << std::endl
+           << "3) Disctrict of Columbia" << std::endl;
     std::cin >> answer;
 
     if (answer == 3)
@@ -496,7 +503,7 @@ void examHighSchool (std::ostream& output)
            << "Boulevier cocktail?\n"
            << "1) Whiskey\n"
            << "2) Campari\n"
-           << "3) Rum" << "\n";
+           << "3) Rum" << std::endl;
     std::cin >> answer;
 
     if (answer == 3)
@@ -538,46 +545,46 @@ int welcomeSwitch (int& oper, std::ostream& output, string& name)
     switch(oper)
     {
         case 0:
-            output << "I love the name " << name << "!" << "\n";
+            output << "I love the name " << name << "!" << std::endl;
             break;
         case 1:
-            output << name << " is a nice name!" << "\n";
+            output << name << " is a nice name!" << std::endl;
             break;
         case 2:
             output << name << " is the nicest name I have ever heard!"
-                   << "\n";
+                   << std::endl;
             break;
         case 3:
-            output << name << " is a fine name if you ask me!" << "\n";
+            output << name << " is a fine name if you ask me!" << std::endl;
             break;
         case 4:
             output << name << " has to be the coolest name in existence!"
-                   << "\n";
+                   << std::endl;
             break;
         case 5:
-            output << name << ", I've never heard of your name!" << "\n";
+            output << name << ", I've never heard of your name!" << std::endl;
             break;
         case 6:
             output << "Wow, is it really the " << name
-                   << " playing this game? I'm honored!" << "\n";
+                   << " playing this game? I'm honored!" << std::endl;
             break;
         case 7:
-            output << "Wow, it's the " << name << "!" << "\n";
+            output << "Wow, it's the " << name << "!" << std::endl;
             break;
         case 8:
             output << "I never knew you liked this game, "
-                   << name << "!" << "\n";
+                   << name << "!" << std::endl;
             break;
         case 9:
-            output << "It's really you, " << name << ". Wow! " << "\n";
+            output << "It's really you, " << name << ". Wow! " << std::endl;
             break;
         case 10:
             output << "You can't imagine how lucky you, " << name
-                   << ", are playing this rare gem!" << "\n";
+                   << ", are playing this rare gem!" << std::endl;
             break;
         default:
             output << "Something went wrong. Please restart the game"
-                   << "\n";
+                   << std::endl;
             exit(0);
     }
 
@@ -610,29 +617,29 @@ void fileInstructionsError (std::ostream& output)
            << "INSTALL INSTRUCTIONS \n\n"
            << "Right click main.cpp on the left hand side "
            << "and click Show Containing Folder. "
-           << "Copy instructions.txt and credits.txt." << "\n"
+           << "Copy instructions.txt and credits.txt." << std::endl
            << "Go up a directory and open the folder Build... "
-           << "Paste the files there, then restart the game. " << "\n"
+           << "Paste the files there, then restart the game. " << std::endl
            << "If this message shows up again on the next run, "
            << "you haven't copied the files successfully. "
-           << "Please try again." << "\n"
+           << "Please try again." << std::endl
            << "PLEASE MAKE SURE YOU DON'T RENAME THE FILES. "
            << "THE GAME RELIES ON THE DEFAULT NAMES "
            << "AND WON'T WORK WITH DIFFERENT FILE NAMES." << "\n\n"
-           << "I hope you enjoy the game! Have fun." << "\n" << "\n";
+           << "I hope you enjoy the game! Have fun." << std::endl << std::endl;
 }
 
 void inputIntegerError (std::ostream& output)
 {
     output << "ERROR: YOU DIDN'T INPUT AN INTEGER. PLEASE TYPE A NEW VALUE."
-           << "\n";
+           << std::endl;
 }
 
 void inputSelectionError (std::ostream& output)
 {
     output << "\nERROR: THE INPUT VALUE HAS TO BE 1-3. "
            << "PLEASE INPUT A NEW VALUE.\n"
-           << "\n";
+           << std::endl;
 }
 
 void gameOver(std::ostream& output)
@@ -640,7 +647,7 @@ void gameOver(std::ostream& output)
     std::ifstream credits("credits.txt");
 
     // Prints the contents of the file
-    output << credits.rdbuf() << "\n" << "\n";
+    output << credits.rdbuf() << std::endl << std::endl;
 
     exit(0);
 }
@@ -658,7 +665,7 @@ void routeHighSchool (std::ostream& output)
 
 void routeRat (std::ostream& output)
 {
-    output << "\nYou rat! You'll not survive in life like this!\n" << "\n";
+    output << "\nYou rat! You'll not survive in life like this!\n" << std::endl;
     gameOver(output);
 }
 
@@ -669,16 +676,16 @@ void highSchoolManager (std::ostream& output)
 
     while (true)
     {
-        output << "\nWhere would you like to apply to? " << "\n"
-                  << "1: High School" << "\n"
-                  << "2: Vocational School" << "\n"
-                  << "3: Rat" << "\n";
+        output << "\nWhere would you like to apply to? " << std::endl
+                  << "1: High School" << std::endl
+                  << "2: Vocational School" << std::endl
+                  << "3: Rat" << std::endl;
         std::getline(std::cin, highSchool);
 
         bool isValueValid = isInputValid(highSchool);
         if (!isValueValid)
         {
-            output << "" << "\n";
+            output << "" << std::endl;
             continue;
         }
 
@@ -720,26 +727,26 @@ void askName (std::ostream& output)
 
     oper = randomRangeGenerator();
 
-//    std::cout << "Oper: " << oper << "\n";
+//    std::cout << "Oper: " << oper << std::endl;
     welcomeSwitch(oper, output, name);
-//    output << name << " is a nice name!" << "\n";
+//    output << name << " is a nice name!" << std::endl;
 }
 
 void childhood(std::ostream& output)
 {
-    output << "\n" << "Your childhood goes by..." << "\n";
+    output << std::endl << "Your childhood goes by..." << std::endl;
 
     for (unsigned i = 0; i <= 15; i += 5)
     {
-        output << "You're now " << i << " years old" << "\n";
+        output << "You're now " << i << " years old" << std::endl;
     }
     output << "\nNext you'll decide where you'd apply to after finishing "
-           << "secondary school!" << "\n";
+           << "secondary school!" << std::endl;
 }
 
 void routeHelsinki(std::ostream& output)
 {
-    output << "\nWelcome to Helsinki!" << "\n";
+    output << "\nWelcome to Helsinki!" << std::endl;
     childhood(output);
 }
 
@@ -751,7 +758,7 @@ void routeTampere(std::ostream& output)
 void routeTurku(std::ostream& output)
 {
     output << "\nAre you nuts? Nobody in their right mind would like to be "
-           << "born in Turku...\n" << "\n";
+           << "born in Turku...\n" << std::endl;
     gameOver(output);
 }
 
@@ -762,10 +769,10 @@ void askPlaceOfBirth (std::ostream& output)
 
     while (true)
     {
-        output << "\nSelect your place of birth: " << "\n"
-                  << "1: Helsinki" << "\n"
-                  << "2: Tampere" << "\n"
-                  << "3: Turku" << "\n";
+        output << "\nSelect your place of birth: " << std::endl
+                  << "1: Helsinki" << std::endl
+                  << "2: Tampere" << std::endl
+                  << "3: Turku" << std::endl;
         std::getline(std::cin, placeOfBirth);
 
         bool isValueValid = isInputValid(placeOfBirth);
@@ -818,7 +825,7 @@ int main()
     if (instructions.is_open() && credits.is_open())
     {
         // Prints the contents of the file
-        output << instructions.rdbuf() << "\n";
+        output << instructions.rdbuf() << std::endl;
     }
 
     else

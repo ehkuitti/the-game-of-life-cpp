@@ -1,10 +1,34 @@
-﻿#include <cstdlib>
+﻿/*
+
+GENERAL GUIDELINES
+
+Formatting
+
+- Please use camelCase instead of under_scoring in function names. This is,
+in my opinion, easier to read.
+- Please make sure character counts, *including comments*, don't exceed 80
+characters per line. If you're using Qt Creator, you can go to:
+Tools -> Options -> Text Editor -> Display -> Check "Display column margin at"
+-> set the value to 80 -> Apply -> OK .
+- Please put the opening curly bracket "{" on the following line in if, for, and
+similar statements.
+
+Git
+
+- Please always commit when there's a major change in the code. This makes it
+possible to go back if something brakes in the future.
+- Please set the title of a non-functioning code to "BROKEN: <message>". This
+way we know when the code broke.
+*/
+
+#include <cstdlib>
 #include <ctime>
 #include <fstream>
 #include <iostream>
 #include <sstream>
 
-// Please don't add "using namespace std;" here since this may cause problems with function names.
+// Please don't add "using namespace std;" here,
+// since this may cause problems with function names.
 // Use std:: in front of the class / function / template instead.
 
 // Makes it possible to use string without typing std:: in the beginning

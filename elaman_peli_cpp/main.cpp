@@ -4,6 +4,9 @@
 #include <iostream>
 #include <sstream>
 
+// Please don't add "using namespace std;" here since this may cause problems with function names.
+// Use std:: in front of the class / function / template instead.
+
 // Makes it possible to use string without typing std:: in the beginning
 using std::string;
 

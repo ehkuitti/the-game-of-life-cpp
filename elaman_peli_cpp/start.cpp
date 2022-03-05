@@ -47,12 +47,14 @@ int welcomeSwitch (int& oper, std::ostream& output, string& name)
         default:
             output << "Something went wrong. Please restart the game"
                    << std::endl;
-            exit(0);
+            exit(1);
     }
 
     return oper;
 }
 
+
+// Funktio palauttaa kokonaisluvun arvolla 0-10
 int welcomeValueGenerator()
 {
     return (rand() % 10) + 1;
@@ -63,11 +65,9 @@ void askName (std::ostream& output)
     string name;
     output << "What's your name? ";
     std::getline(std::cin, name);
+
     int oper = 0;
-
     oper = welcomeValueGenerator();
-
-//    std::cout << "Oper: " << oper << std::endl;
     welcomeSwitch(oper, output, name);
-//    output << name << " is a nice name!" << std::endl;
+
 }

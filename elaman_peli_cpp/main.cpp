@@ -26,6 +26,7 @@ way we know when the code broke.
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <start.cpp>
 
 // Please don't add "using namespace std;" here,
 // since this may cause problems with function names.
@@ -540,62 +541,6 @@ void examHighSchool (std::ostream& output)
 
 }
 
-int welcomeSwitch (int& oper, std::ostream& output, string& name)
-{
-    switch(oper)
-    {
-        case 0:
-            output << "I love the name " << name << "!" << std::endl;
-            break;
-        case 1:
-            output << name << " is a nice name!" << std::endl;
-            break;
-        case 2:
-            output << name << " is the nicest name I have ever heard!"
-                   << std::endl;
-            break;
-        case 3:
-            output << name << " is a fine name if you ask me!" << std::endl;
-            break;
-        case 4:
-            output << name << " has to be the coolest name in existence!"
-                   << std::endl;
-            break;
-        case 5:
-            output << name << ", I've never heard of your name!" << std::endl;
-            break;
-        case 6:
-            output << "Wow, is it really the " << name
-                   << " playing this game? I'm honored!" << std::endl;
-            break;
-        case 7:
-            output << "Wow, it's the " << name << "!" << std::endl;
-            break;
-        case 8:
-            output << "I never knew you liked this game, "
-                   << name << "!" << std::endl;
-            break;
-        case 9:
-            output << "It's really you, " << name << ". Wow! " << std::endl;
-            break;
-        case 10:
-            output << "You can't imagine how lucky you, " << name
-                   << ", are playing this rare gem!" << std::endl;
-            break;
-        default:
-            output << "Something went wrong. Please restart the game"
-                   << std::endl;
-            exit(0);
-    }
-
-    return oper;
-}
-
-int randomRangeGenerator()
-{
-    return (rand() % 10) + 1;
-}
-
 bool isInputValid (string& placeOfBirth)
 {
     for (unsigned i = 0; i < placeOfBirth.length(); i++)
@@ -716,20 +661,6 @@ void highSchoolManager (std::ostream& output)
             break;
     }
 
-}
-
-void askName (std::ostream& output)
-{
-    string name;
-    output << "What's your name? ";
-    std::getline(std::cin, name);
-    int oper = 0;
-
-    oper = randomRangeGenerator();
-
-//    std::cout << "Oper: " << oper << std::endl;
-    welcomeSwitch(oper, output, name);
-//    output << name << " is a nice name!" << std::endl;
 }
 
 void childhood(std::ostream& output)

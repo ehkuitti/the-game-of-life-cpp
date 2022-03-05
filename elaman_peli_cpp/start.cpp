@@ -53,7 +53,6 @@ int welcomeSwitch (int& oper, std::ostream& output, string& name)
     return oper;
 }
 
-
 // Funktio palauttaa kokonaisluvun arvolla 0-10
 int welcomeValueGenerator()
 {
@@ -69,5 +68,6 @@ void askName (std::ostream& output)
     int oper = 0;
     oper = welcomeValueGenerator();
     welcomeSwitch(oper, output, name);
-
 }
+
+

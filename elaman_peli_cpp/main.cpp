@@ -21,12 +21,16 @@ possible to go back if something brakes in the future.
 way we know when the code broke.
 */
 
+#include "valueChecks.cpp"
+#include "stringToIntConversion.cpp"
+#include "start.cpp"
+#include "credits.cpp"
+#include "cityChoices.cpp"
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include <start.cpp>
 
 // Please don't add "using namespace std;" here,
 // since this may cause problems with function names.
@@ -35,11 +39,8 @@ way we know when the code broke.
 // Makes it possible to use string without typing std:: in the beginning
 using std::string;
 
-//Method stubs for functions further down the program
+// Method stubs for functions further down the program
 void collegeStudyYearPrinter(int& studyYear, std::ostream& output);
-void gameOver(std::ostream& output);
-bool isInputValid (string& placeOfBirth);
-void inputSelectionError (std::ostream& output);
 void routeHighSchool (std::ostream& output);
 void routeVocationalSchool (std::ostream& output);
 void routeRat (std::ostream& output);
@@ -86,15 +87,6 @@ void collegeFieldWelcomer (string& field, std::ostream& output)
 void collegeStudyYearPrinter (int& studyYear, std::ostream& output)
 {
     output << "And so went your study year " << studyYear << " in college.";
-}
-
-int stringToInt (string& selection, int& oper)
-{
-    std::stringstream valueToInt;
-    valueToInt << selection;
-    valueToInt >> oper;
-
-    return oper;
 }
 
 void vandalism (std::ostream& output)
@@ -151,7 +143,7 @@ void uniColManager (std::ostream& output)
 
         if (oper <= 0 || oper >= 4)
         {
-            inputSelectionError(output);
+            errorInputSelection(output);
             continue;
         }
 
@@ -200,7 +192,7 @@ void uoasManager (std::ostream& output)
 
         if (oper <= 0 || oper >= 4)
         {
-            inputSelectionError(output);
+            errorInputSelection(output);
             continue;
         }
 
@@ -249,7 +241,7 @@ void collegeManager (std::ostream& output)
 
         if (oper <= 0 || oper >= 4)
         {
-            inputSelectionError(output);
+            errorInputSelection(output);
             continue;
         }
 
@@ -541,19 +533,6 @@ void examHighSchool (std::ostream& output)
 
 }
 
-bool isInputValid (string& placeOfBirth)
-{
-    for (unsigned i = 0; i < placeOfBirth.length(); i++)
-    {
-        if (!isdigit(placeOfBirth[i]))
-        {
-            return false;
-        }
-    }
-
-    return true;
-}
-
 void fileInstructionsError (std::ostream& output)
 {
     output << "PLEASE MAXIMIZE THIS WINDOW" << "\n\n"
@@ -572,29 +551,6 @@ void fileInstructionsError (std::ostream& output)
            << "THE GAME RELIES ON THE DEFAULT NAMES "
            << "AND WON'T WORK WITH DIFFERENT FILE NAMES." << "\n\n"
            << "I hope you enjoy the game! Have fun." << std::endl << std::endl;
-}
-
-void inputIntegerError (std::ostream& output)
-{
-    output << "ERROR: YOU DIDN'T INPUT AN INTEGER. PLEASE TYPE A NEW VALUE."
-           << std::endl;
-}
-
-void inputSelectionError (std::ostream& output)
-{
-    output << "\nERROR: THE INPUT VALUE HAS TO BE 1-3. "
-           << "PLEASE INPUT A NEW VALUE.\n"
-           << std::endl;
-}
-
-void gameOver(std::ostream& output)
-{
-    std::ifstream credits("credits.txt");
-
-    // Prints the contents of the file
-    output << credits.rdbuf() << std::endl << std::endl;
-
-    exit(0);
 }
 
 void routeHighSchool (std::ostream& output)
@@ -638,7 +594,7 @@ void highSchoolManager (std::ostream& output)
 
         if (oper <= 0 || oper >= 4)
         {
-            inputSelectionError(output);
+            errorInputSelection(output);
             continue;
         }
 
@@ -663,36 +619,6 @@ void highSchoolManager (std::ostream& output)
 
 }
 
-void childhood(std::ostream& output)
-{
-    output << std::endl << "Your childhood goes by..." << std::endl;
-
-    for (unsigned i = 0; i <= 15; i += 5)
-    {
-        output << "You're now " << i << " years old" << std::endl;
-    }
-    output << "\nNext you'll decide where you'd apply to after finishing "
-           << "secondary school!" << std::endl;
-}
-
-void routeHelsinki(std::ostream& output)
-{
-    output << "\nWelcome to Helsinki!" << std::endl;
-    childhood(output);
-}
-
-void routeTampere(std::ostream& output)
-{
-    childhood(output);
-}
-
-void routeTurku(std::ostream& output)
-{
-    output << "\nAre you nuts? Nobody in their right mind would like to be "
-           << "born in Turku...\n" << std::endl;
-    gameOver(output);
-}
-
 void askPlaceOfBirth (std::ostream& output)
 {
     string placeOfBirth;
@@ -709,7 +635,7 @@ void askPlaceOfBirth (std::ostream& output)
         bool isValueValid = isInputValid(placeOfBirth);
         if (!isValueValid)
         {
-            inputIntegerError(output);
+            errorInputInteger(output);
             continue;
         }
 
@@ -717,7 +643,7 @@ void askPlaceOfBirth (std::ostream& output)
 
         if (oper <= 0 || oper >= 4)
         {
-            inputSelectionError(output);
+            errorInputSelection(output);
             continue;
         }
 
@@ -731,17 +657,18 @@ void askPlaceOfBirth (std::ostream& output)
     switch (oper)
     {
         case 1:
-            routeHelsinki(output);
+            choiceHelsinki(output);
             break;
         case 2:
-            routeTampere(output);
+            choiceTampere(output);
             break;
         case 3:
-            routeTurku(output);
+            choiceTurku(output);
             break;
     }
 
 }
+
 int main()
 {
     //Tekee randomeista randomeita

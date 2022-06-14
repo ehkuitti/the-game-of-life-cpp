@@ -4,12 +4,13 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        childhood.cpp \
-        cityChoices.cpp \
-        credits.cpp \
-        main.cpp \
-        start.cpp \
-        stringToIntConversion.cpp \
-        valueChecks.cpp
+    askPlayerName.cpp \
+    errors.cpp \
+    main.cpp
+
 
 HEADERS +=
+
+DISTFILES += \
+    credits.txt \
+    instructions.txt

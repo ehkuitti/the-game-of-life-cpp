@@ -6,6 +6,7 @@ CONFIG -= qt
 SOURCES += \
     askPlayerName.cpp \
     errors.cpp \
+    generateRandomValues.cpp \
     main.cpp
 
 

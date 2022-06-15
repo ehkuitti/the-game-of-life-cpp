@@ -1,0 +1,4 @@
+int generateRandomValue(int& switchOperator)
+{
+
+}

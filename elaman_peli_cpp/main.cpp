@@ -23,6 +23,7 @@
 
 #include "askPlayerName.cpp"
 #include "errors.cpp"
+#include "generateRandomValues.cpp"
 
 #include <fstream>
 #include <iostream>
@@ -37,12 +38,15 @@ int main()
 {
     // VARIABLE INITIALIZATIONS ORDERED BY TYPE ALPHABETICALLY
 
+    // Integers
+    int switchOperator = 0;
+
     // Standard template library class objects
     std::ifstream gameInstructions("instructions.cpp");
     std::ifstream gameCredits("credits.txt");
 
     // Standard strings
-    std::string name = "";
+    std::string playerName = "";
 
     if (!(gameInstructions.is_open()) && !(gameCredits.is_open()))
     {
@@ -50,7 +54,9 @@ int main()
         return EXIT_FAILURE;
     }
 
-    askName(name);
+    askName(playerName);
+    generateRandomValue(switchOperator);
+
     return EXIT_SUCCESS;
 
 }

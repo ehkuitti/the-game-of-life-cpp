@@ -4,10 +4,12 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    askPlayerName.cpp \
+    askPlayerInfo.cpp \
     errors.cpp \
     generateRandomValues.cpp \
-    main.cpp
+    main.cpp \
+    valueChecks.cpp \
+    valueConversions.cpp
 
 
 HEADERS +=

@@ -1,9 +1,16 @@
 /*
-
+ *
  * GENERAL GUIDELINES
-
+ *
+ * Git
+ *
+ * - Please always commit when there's a major change in the code. This makes it
+ * possible to go back if something brakes in the future.
+ * - Please set the title of a non-functioning code to "BROKEN: <message>". This
+ * way we know when the code broke.
+ *
  * Formatting
-
+ *
  * - Please use camelCase instead of under_scoring in function names. This is,
  * in my opinion, easier to read.
  * - Please make sure character counts, *including comments*, don't exceed 80
@@ -13,17 +20,16 @@
  * - Please put the opening curly bracket "{" on the following line in if, for,
  * and similar statements.
  *
- * Git
-
- * - Please always commit when there's a major change in the code. This makes it
- * possible to go back if something brakes in the future.
- * - Please set the title of a non-functioning code to "BROKEN: <message>". This
- * way we know when the code broke.
+ * Funtionality
+ *
+ * - Please don't enable using namespace std. This is to avoid confusion between
+ * own functions and functions within std namespace, e.g. std::max and max.
  */
 
-#include "askPlayerName.cpp"
+#include "askPlayerInfo.cpp"
 #include "errors.cpp"
 #include "generateRandomValues.cpp"
+#include "valueChecks.cpp"
 
 #include <fstream>
 #include <iostream>
@@ -46,8 +52,11 @@ int main()
     std::ifstream gameCredits("credits.txt");
 
     // Standard strings
+    std::string placeOfBirth = "";
     std::string playerName = "";
 
+    // The game won't launch if it can't open the instruction and credit files
+    // from the working directory (dir location is OS dependent)
     if (!(gameInstructions.is_open()) && !(gameCredits.is_open()))
     {
         errorFileInstructions();
@@ -55,6 +64,8 @@ int main()
     }
 
     askName(playerName);
+    askPlaceOfBirth(placeOfBirth);
+    doesStringContainNumbers(placeOfBirth);
     generateRandomValue(switchOperator);
 
     return EXIT_SUCCESS;

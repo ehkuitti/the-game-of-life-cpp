@@ -44,6 +44,9 @@ int main()
 {
     // VARIABLE INITIALIZATIONS ORDERED BY TYPE ALPHABETICALLY
 
+    // Booleans
+    bool isPlaceOfBirthANumber = false;
+
     // Integers
     int switchOperator = 0;
 
@@ -55,6 +58,7 @@ int main()
     std::string placeOfBirth = "";
     std::string playerName = "";
 
+
     // The game won't launch if it can't open the instruction and credit files
     // from the working directory (dir location is OS dependent)
     if (!(gameInstructions.is_open()) && !(gameCredits.is_open()))
@@ -64,8 +68,12 @@ int main()
     }
 
     askName(playerName);
+
+    // The game asks for the player's place of birth and checks whether the
+    // input contains numbers to produce an error in such a case.
     askPlaceOfBirth(placeOfBirth);
-    doesStringContainNumbers(placeOfBirth);
+    isPlaceOfBirthANumber = doesStringContainNumbers(placeOfBirth);
+
     generateRandomValue(switchOperator);
 
     return EXIT_SUCCESS;

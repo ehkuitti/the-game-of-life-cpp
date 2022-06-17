@@ -51,7 +51,7 @@ int main()
     int switchOperator = 0;
 
     // Standard template library class objects
-    std::ifstream gameInstructions("instructions.cpp");
+    std::ifstream gameInstructions("instructions.txt");
     std::ifstream gameCredits("credits.txt");
 
     // Standard strings
@@ -61,7 +61,7 @@ int main()
 
     // The game won't launch if it can't open the instruction and credit files
     // from the working directory (dir location is OS dependent)
-    if (!(gameInstructions.is_open()) && !(gameCredits.is_open()))
+    if (!(gameInstructions.is_open()) || !(gameCredits.is_open()))
     {
         errorFileInstructions();
         return EXIT_FAILURE;

@@ -29,8 +29,8 @@
 #include "askPlayerInfo.cpp"
 #include "errors.cpp"
 #include "generateRandomValues.cpp"
-#include "valueChecks.cpp"
 #include "generateWelcomeMessage.cpp"
+#include "valueChecks.cpp"
 
 #include <ctime>
 #include <fstream>

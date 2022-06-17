@@ -2,15 +2,25 @@
 
 /* The function of the function is to check wheter the string input
 contains a number. If it does, it will return a boolean accordingly.*/
-int doesStringContainNumbers(std::string& myString)
+bool isInputANumber(std::string& myString)
 {
-    for (unsigned i = 0; i < myString.length(); i++)
+
+    // If the letter in index 0 isn't a number, return "isn't a number"
+    if(!isdigit(myString[0]))
     {
-        if(!isdigit(myString[i]))
-        {
-            return false;
-        }
+        return false;
     }
 
-    return true;
+    // If user didn't input anything, return "isn't a number"
+    else if (myString.length() < 1)
+    {
+        return false;
+    }
+
+    // Is a number
+    else
+    {
+        return true;
+    }
+
 }

@@ -30,7 +30,9 @@
 #include "errors.cpp"
 #include "generateRandomValues.cpp"
 #include "valueChecks.cpp"
+#include "generateWelcomeMessage.cpp"
 
+#include <ctime>
 #include <fstream>
 #include <iostream>
 
@@ -67,14 +69,21 @@ int main()
         return EXIT_FAILURE;
     }
 
+    // The game starts by asking for the player's name
     askName(playerName);
+
+    srand(time(NULL));
+    generateRandomValue(switchOperator);
+    generateRandomWelcomeMessage(playerName, switchOperator);
 
     // The game asks for the player's place of birth and checks whether the
     // input contains numbers to produce an error in such a case.
-    askPlaceOfBirth(placeOfBirth);
-    isPlaceOfBirthANumber = doesStringContainNumbers(placeOfBirth);
+    while (!isPlaceOfBirthANumber)
+    {
+        askPlaceOfBirth(placeOfBirth);
+        isPlaceOfBirthANumber = isInputANumber(placeOfBirth);
+    }
 
-    generateRandomValue(switchOperator);
 
     return EXIT_SUCCESS;
 

@@ -7,6 +7,7 @@ SOURCES += \
     askPlayerInfo.cpp \
     errors.cpp \
     generateRandomValues.cpp \
+    generateWelcomeMessage.cpp \
     main.cpp \
     valueChecks.cpp \
     valueConversions.cpp

@@ -26,8 +26,8 @@
  * own functions and functions within std namespace, e.g. std::max and max.
  */
 
-#include "askPlayerInfo.cpp"
-#include "errors.cpp"
+#include "askPlayerName.cpp"
+#include "fileReadingErrors.cpp"
 #include "generateRandomValues.cpp"
 #include "generateWelcomeMessage.cpp"
 #include "valueChecks.cpp"
@@ -49,20 +49,14 @@ int main()
 {
     // VARIABLE INITIALIZATIONS ORDERED BY TYPE ALPHABETICALLY
 
-    // Booleans
-    bool isPlaceOfBirthANumber = false;
-    bool isAnswerValid = false;
-
     // Integers
     int switchOperator = 0;
-    int answer = 0;
 
     // Standard template library ifstreams
     std::ifstream gameInstructions("instructions.txt");
     std::ifstream gameCredits("credits.txt");
 
     // Standard strings
-    std::string placeOfBirth = "";
     std::string playerName = "";
 
     // Standard template library stringstreams
@@ -86,16 +80,8 @@ int main()
 
     // The game asks for the player's place of birth and checks whether the
     // input contains numbers to produce an error in such a case.
-    while (!isAnswerValid)
-    {
-        askPlaceOfBirth(placeOfBirth);
-        isPlaceOfBirthANumber = isInputANumber(placeOfBirth);
-        if (!isPlaceOfBirthANumber)
-        {
-            errorNotANumber();
-            continue;
-        }
-    }
+    checkNumberAndRange();
+
 
     return EXIT_SUCCESS;
 

@@ -1,4 +1,8 @@
+#include "askPlayerPlaceOfBirth.cpp"
+#include "valueErrors.cpp"
+
 #include <string>
+
 
 /* The function of the function is to check wheter the string input
 contains a number. If it does, it will return a boolean accordingly.*/
@@ -36,5 +40,23 @@ bool isAnswerWithinRange(int& answer)
     else
     {
         return true;
+    }
+}
+
+void checkNumberAndRange ()
+{
+    bool isAnswerValid = false;
+    bool isPlaceOfBirthANumber = false;
+    std::string placeOfBirth = "";
+
+    while (!isAnswerValid)
+    {
+        askPlaceOfBirth(placeOfBirth);
+        isPlaceOfBirthANumber = isInputANumber(placeOfBirth);
+        if (!isPlaceOfBirthANumber)
+        {
+            errorNotANumber();
+            continue;
+        }
     }
 }

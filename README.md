@@ -1,7 +1,7 @@
 # The Game of Life - a Command Line Game
 
 ## Crucial info
-The project was restarted on June 14th, 2022, please see ([commit 481449d])(https://github.com/ehkuitti/the-game-of-life-cpp/commit/481449d9aa291a6ebd9417e44ad5019b4fa9e0a6). **Do not revert beyond this point. This WILL cause problems because of a different project structure.**
+The project was restarted on June 14th, 2022, please see ([481449d])(https://github.com/ehkuitti/the-game-of-life-cpp/commit/481449d9aa291a6ebd9417e44ad5019b4fa9e0a6). **Do not revert beyond this point. This WILL cause problems because of a different project structure.**
 
 ## About the project
 

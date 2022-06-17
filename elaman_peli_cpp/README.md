@@ -1,6 +1,6 @@
 # CODE DOCUMENTATION
 
-## File structure
+## Program structure
 
 ### askPlayerInfo.cpp
 

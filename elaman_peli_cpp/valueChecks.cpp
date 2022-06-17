@@ -25,3 +25,16 @@ bool isInputANumber(std::string& myString)
     }
 
 }
+
+bool isAnswerWithinRange(int& answer)
+{
+    if (answer < 1 || answer > 3)
+    {
+        return false;
+    }
+
+    else
+    {
+        return true;
+    }
+}

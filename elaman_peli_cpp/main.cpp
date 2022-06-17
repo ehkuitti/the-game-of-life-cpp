@@ -31,11 +31,13 @@
 #include "generateRandomValues.cpp"
 #include "generateWelcomeMessage.cpp"
 #include "valueChecks.cpp"
+#include "valueConversions.cpp"
 
 #include <ctime>
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <sstream>
 
 /*
  * The main function is intended to run the rest of the functions in the
@@ -49,11 +51,13 @@ int main()
 
     // Booleans
     bool isPlaceOfBirthANumber = false;
+    bool isAnswerValid = false;
 
     // Integers
     int switchOperator = 0;
+    int answer = 0;
 
-    // Standard template library class objects
+    // Standard template library ifstreams
     std::ifstream gameInstructions("instructions.txt");
     std::ifstream gameCredits("credits.txt");
 
@@ -61,9 +65,12 @@ int main()
     std::string placeOfBirth = "";
     std::string playerName = "";
 
+    // Standard template library stringstreams
+    std::stringstream toIntConverter;
+
 
     // The game won't launch if it can't open the instruction and credit files
-    // from the working directory (dir location is OS dependent)
+    // from the working directory (dir location on drive is OS dependent)
     if (!(gameInstructions.is_open()) || !(gameCredits.is_open()))
     {
         errorFileInstructions();
@@ -79,12 +86,16 @@ int main()
 
     // The game asks for the player's place of birth and checks whether the
     // input contains numbers to produce an error in such a case.
-    while (!isPlaceOfBirthANumber)
+    while (!isAnswerValid)
     {
         askPlaceOfBirth(placeOfBirth);
         isPlaceOfBirthANumber = isInputANumber(placeOfBirth);
+        if (!isPlaceOfBirthANumber)
+        {
+            errorNotANumber();
+            continue;
+        }
     }
-
 
     return EXIT_SUCCESS;
 

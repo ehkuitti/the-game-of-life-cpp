@@ -35,6 +35,7 @@
 #include <ctime>
 #include <fstream>
 #include <iostream>
+#include <string>
 
 /*
  * The main function is intended to run the rest of the functions in the

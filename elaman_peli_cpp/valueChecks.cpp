@@ -11,7 +11,8 @@ bool isInputANumber(std::string& myString)
         return false;
     }
 
-    // If user didn't input anything, return "isn't a number"
+    // If user didn't input anything, return "isn't a number". For example, the
+    // "lenght" of a single press of enter is zero
     else if (myString.length() < 1)
     {
         return false;

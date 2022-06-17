@@ -1,7 +1,7 @@
 # The Game of Life - a Command Line Game
 
 ## Crucial info
-The project was restarted on June 14th, 2022, please see [commit 481449d](https://github.com/ehkuitti/the-game-of-life-cpp/commit/481449d9aa291a6ebd9417e44ad5019b4fa9e0a6). **Do not revert beyond this point. This WILL cause problems because of a different project structure.**
+The project was restarted on June 14th, 2022, please see [commit 481449d](https://github.com/ehkuitti/the-game-of-life-cpp/commit/481449d9aa291a6ebd9417e44ad5019b4fa9e0a6). **Do NOT revert beyond this point. This WILL cause problems because of a different project structure.**
 
 ## About the project
 
@@ -24,4 +24,6 @@ some minor improvements, like randomly generated welcome messages using `switch`
 
 ## Additional notes
 
-The project language was changed to English from Finnish in June 2022. Please note, however, that since I'm Finnish, my English isn't perfect for it not being my mother tongue. If you notice some errors and/or grammar mistakes in here in GitHub or in the code itself, please don't hesitate to 
+The project language was changed to English from Finnish in June 2022. Please note, however, that since I'm Finnish, my English isn't perfect for it not being my mother tongue. If you notice some errors and/or grammar mistakes in here in GitHub or in the code itself, please don't hesitate to fix the mistakes.
+
+The project was restarted on June 14th due to lack of initial planning. Old code was moved to /src_old for using parts of it in future releases too.

@@ -78,7 +78,6 @@ int main()
     // input contains numbers to produce an error in such a case.
     checkNumberAndRange();
 
-    std::cout << "Kiitos pelaamisesta!" << std::endl;
     return EXIT_SUCCESS;
 
 }

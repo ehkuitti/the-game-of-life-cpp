@@ -1,10 +1,13 @@
 #include <string>
 #include <sstream>
 
-void convertStringToInt(int& answer,
-                        std::string& placeOfBirth,
-                        std::stringstream& toIntConverter)
+int convertStringToInt(std::string& strPlaceOfBirth)
 {
-    toIntConverter << placeOfBirth;
-    toIntConverter >> answer;
+    int intPlaceOfBirth = 0;
+    std::stringstream toIntConverter;
+
+    toIntConverter << strPlaceOfBirth;
+    toIntConverter >> intPlaceOfBirth;
+
+    return intPlaceOfBirth;
 }

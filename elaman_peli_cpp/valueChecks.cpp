@@ -1,4 +1,5 @@
 #include "askPlayerPlaceOfBirth.cpp"
+#include "valueConversions.cpp"
 #include "valueErrors.cpp"
 
 #include <string>
@@ -30,6 +31,8 @@ bool isInputANumber(std::string& myString)
 
 }
 
+// In regular quesions, the legal answers are 1, 2, 3. Any value outside these
+// is considered an illegal answer.
 bool isAnswerWithinRange(int& answer)
 {
     if (answer < 1 || answer > 3)
@@ -47,16 +50,28 @@ void checkNumberAndRange ()
 {
     bool isAnswerValid = false;
     bool isPlaceOfBirthANumber = false;
-    std::string placeOfBirth = "";
+    std::string strPlaceOfBirth = "";
+    int intPlaceOfBirth = 0;
 
     while (!isAnswerValid)
     {
-        askPlaceOfBirth(placeOfBirth);
-        isPlaceOfBirthANumber = isInputANumber(placeOfBirth);
+        askPlaceOfBirth(strPlaceOfBirth);
+        isPlaceOfBirthANumber = isInputANumber(strPlaceOfBirth);
         if (!isPlaceOfBirthANumber)
         {
             errorNotANumber();
-            continue;
+        }
+        else
+        {
+            intPlaceOfBirth = convertStringToInt(strPlaceOfBirth);
+            if(!isAnswerWithinRange(intPlaceOfBirth))
+            {
+                errorAnswerOutsideRange();
+            }
+            else
+            {
+                isAnswerValid = true;
+            }
         }
     }
 }

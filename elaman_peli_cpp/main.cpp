@@ -31,7 +31,6 @@
 #include "generateRandomValues.cpp"
 #include "generateWelcomeMessage.cpp"
 #include "valueChecks.cpp"
-#include "valueConversions.cpp"
 
 #include <ctime>
 #include <fstream>
@@ -59,9 +58,6 @@ int main()
     // Standard strings
     std::string playerName = "";
 
-    // Standard template library stringstreams
-    std::stringstream toIntConverter;
-
 
     // The game won't launch if it can't open the instruction and credit files
     // from the working directory (dir location on drive is OS dependent)
@@ -82,7 +78,7 @@ int main()
     // input contains numbers to produce an error in such a case.
     checkNumberAndRange();
 
-
+    std::cout << "Kiitos pelaamisesta!" << std::endl;
     return EXIT_SUCCESS;
 
 }

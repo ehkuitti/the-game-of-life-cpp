@@ -47,7 +47,9 @@
  */
 int main()
 {
-    // VARIABLE INITIALIZATIONS ORDERED BY TYPE ALPHABETICALLY
+
+    // -------------------- VARIABLE INITIALIZATIONS ---------------------------
+
 
     // Booleans
     bool isPlaceOfBirthValid = false;
@@ -64,6 +66,12 @@ int main()
     std::string placeOfBirth = "";
 
 
+    // -------------------------- CODE START -----------------------------------
+
+
+    // Uses time to generate random numbers
+    srand(time(NULL));
+
     // The game won't launch if it can't open the instruction and credit files
     // from the working directory (dir location on drive is OS dependent)
     if (!(gameInstructions.is_open()) || !(gameCredits.is_open()))
@@ -78,20 +86,19 @@ int main()
      * operator.
      */
     askName(playerName);
-    srand(time(NULL));
     generateRandomValue(switchOperator);
     generateRandomWelcomeMessage(playerName, switchOperator);
 
+    // The game asks for the player's place of birth and checks whether the
+    // input contains numbers to produce an error in such a case.
     while (!isPlaceOfBirthValid)
     {
         askPlaceOfBirth(placeOfBirth);
         isPlaceOfBirthValid = checkNumberAndRange(placeOfBirth);
     }
 
-    // The game asks for the player's place of birth and checks whether the
-    // input contains numbers to produce an error in such a case.
 
-    std::cout << "Päästiin tänne" << std::endl;
+    // The game ends.
     return EXIT_SUCCESS;
 
 }

@@ -27,6 +27,7 @@
  */
 
 #include "askPlayerName.cpp"
+#include "askPlayerPlaceOfBirth.cpp"
 #include "fileReadingErrors.cpp"
 #include "generateRandomValues.cpp"
 #include "generateWelcomeMessage.cpp"
@@ -48,6 +49,9 @@ int main()
 {
     // VARIABLE INITIALIZATIONS ORDERED BY TYPE ALPHABETICALLY
 
+    // Booleans
+    bool isPlaceOfBirthValid = false;
+
     // Integers
     int switchOperator = 0;
 
@@ -57,6 +61,7 @@ int main()
 
     // Standard strings
     std::string playerName = "";
+    std::string placeOfBirth = "";
 
 
     // The game won't launch if it can't open the instruction and credit files
@@ -67,17 +72,26 @@ int main()
         return EXIT_FAILURE;
     }
 
-    // The game starts by asking for the player's name
+    /*
+     * The game starts by asking for the player's name and randomly selecting a
+     * welcome message by generating a random number and using it as a switch
+     * operator.
+     */
     askName(playerName);
-
     srand(time(NULL));
     generateRandomValue(switchOperator);
     generateRandomWelcomeMessage(playerName, switchOperator);
 
+    while (!isPlaceOfBirthValid)
+    {
+        askPlaceOfBirth(placeOfBirth);
+        isPlaceOfBirthValid = checkNumberAndRange(placeOfBirth);
+    }
+
     // The game asks for the player's place of birth and checks whether the
     // input contains numbers to produce an error in such a case.
-    checkNumberAndRange();
 
+    std::cout << "Päästiin tänne" << std::endl;
     return EXIT_SUCCESS;
 
 }

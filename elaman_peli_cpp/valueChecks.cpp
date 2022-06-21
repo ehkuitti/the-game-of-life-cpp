@@ -1,4 +1,3 @@
-#include "askPlayerPlaceOfBirth.cpp"
 #include "valueConversions.cpp"
 #include "valueErrors.cpp"
 
@@ -46,27 +45,27 @@ bool isAnswerWithinRange(int& answer)
     }
 }
 
-void checkNumberAndRange ()
+bool checkNumberAndRange (std::string& strAnswer)
 {
     bool isAnswerValid = false;
     bool isPlaceOfBirthANumber = false;
-    std::string strPlaceOfBirth = "";
-    int intPlaceOfBirth = 0;
+    int intAnswer = 0;
 
     while (!isAnswerValid)
     {
-        askPlaceOfBirth(strPlaceOfBirth);
-        isPlaceOfBirthANumber = isInputANumber(strPlaceOfBirth);
+        isPlaceOfBirthANumber = isInputANumber(strAnswer);
         if (!isPlaceOfBirthANumber)
         {
             errorNotANumber();
+            return false;
         }
         else
         {
-            intPlaceOfBirth = convertStringToInt(strPlaceOfBirth);
-            if(!isAnswerWithinRange(intPlaceOfBirth))
+            intAnswer = convertStringToInt(strAnswer);
+            if(!isAnswerWithinRange(intAnswer))
             {
                 errorAnswerOutsideRange();
+                return false;
             }
             else
             {
@@ -74,4 +73,5 @@ void checkNumberAndRange ()
             }
         }
     }
+    return true;
 }

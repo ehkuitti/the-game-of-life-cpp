@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+// Prints a welcome to game message with a randomly generated number
 void generateRandomWelcomeMessage(std::string& playerName, int& switchOperator)
 {
 

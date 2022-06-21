@@ -45,6 +45,7 @@ bool isAnswerWithinRange(int& answer)
     }
 }
 
+// Checks if input is a number and if it's in the range of 1-3
 bool checkNumberAndRange (std::string& strAnswer)
 {
     bool isAnswerValid = false;

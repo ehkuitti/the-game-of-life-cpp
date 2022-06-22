@@ -81,12 +81,8 @@ int main()
         return EXIT_FAILURE;
     }
 
-    /*
-     * The game starts by asking for the player's name and randomly selecting a
-     * welcome message by generating a random number and using it as a switch
-     * operator.
-     */
-
+     // The game starts by asking for the player's name and checking wheter it
+     // is empty, i.e. the player didn't input anything
     while (isNameEmpty)
     {
         if (!askName(playerName))
@@ -98,6 +94,9 @@ int main()
             isNameEmpty = false;
         }
     }
+
+    // Once the player has inputted a name, the game prints a welcome message
+    // by generating a random number and using it as a switch operator
     generateRandomValue(switchOperator);
     generateRandomWelcomeMessage(playerName, switchOperator);
 

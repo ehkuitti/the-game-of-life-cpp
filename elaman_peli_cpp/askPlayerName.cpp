@@ -8,8 +8,18 @@
 
 // main.cpp runs this function to ask the player's name. Uses reference to refer
 // to similarly named variable in main
-void askName(std::string& playerName)
+bool askName(std::string& playerName)
 {
     std::cout << "What's your name? ";
     std::getline(std::cin, playerName);
+
+    if (playerName.length() < 1)
+    {
+        return false;
+    }
+
+    else
+    {
+        return true;
+    }
 }

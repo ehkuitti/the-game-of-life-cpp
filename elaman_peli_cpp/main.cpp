@@ -52,6 +52,7 @@ int main()
 
 
     // Booleans
+    bool isNameEmpty = true;
     bool isPlaceOfBirthValid = false;
 
     // Integers
@@ -85,7 +86,18 @@ int main()
      * welcome message by generating a random number and using it as a switch
      * operator.
      */
-    askName(playerName);
+
+    while (isNameEmpty)
+    {
+        if (!askName(playerName))
+        {
+            errorEmptyName();
+        }
+        else
+        {
+            isNameEmpty = false;
+        }
+    }
     generateRandomValue(switchOperator);
     generateRandomWelcomeMessage(playerName, switchOperator);
 

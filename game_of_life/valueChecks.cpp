@@ -1,3 +1,4 @@
+#include "askPlayerName.cpp"
 #include "valueConversions.cpp"
 #include "valueErrors.cpp"
 
@@ -46,7 +47,7 @@ bool isAnswerWithinRange(int& answer)
 }
 
 // Checks if input is a number and if it's in the range of 1-3
-bool checkNumberAndRange (std::string& strAnswer)
+bool areNumberAndRangeLegal (std::string& strAnswer)
 {
     bool isAnswerValid = false;
     bool isPlaceOfBirthANumber = false;
@@ -75,4 +76,21 @@ bool checkNumberAndRange (std::string& strAnswer)
         }
     }
     return true;
+}
+
+void hasPlayerInputtedAName(std::string& playerName) {
+
+    bool isNameEmpty = true;
+
+    while (isNameEmpty)
+    {
+        if (!askName(playerName))
+        {
+            errorNoInput();
+        }
+        else
+        {
+            isNameEmpty = false;
+        }
+    }
 }

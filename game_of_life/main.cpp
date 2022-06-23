@@ -27,7 +27,6 @@
  */
 
 // Includes for my own files
-#include "askPlayerName.cpp"
 #include "askPlayerPlaceOfBirth.cpp"
 #include "fileReadingErrors.cpp"
 #include "generateRandomValues.cpp"
@@ -39,7 +38,6 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <sstream>
 
 /*
  * The main function is intended to run the rest of the functions in the
@@ -54,7 +52,6 @@ int main()
 
 
     // Booleans
-    bool isNameEmpty = true;
     bool isPlaceOfBirthValid = false;
 
     // Integers
@@ -85,17 +82,7 @@ int main()
 
      // The game starts by asking for the player's name and checking wheter it
      // is empty, i.e. the player didn't input anything
-    while (isNameEmpty)
-    {
-        if (!askName(playerName))
-        {
-            errorNoInput();
-        }
-        else
-        {
-            isNameEmpty = false;
-        }
-    }
+    hasPlayerInputtedAName(playerName);
 
     // Once the player has inputted a name, the game prints a welcome message
     // by generating a random number and using it as a switch operator
@@ -107,7 +94,7 @@ int main()
     while (!isPlaceOfBirthValid)
     {
         askPlaceOfBirth(placeOfBirth);
-        isPlaceOfBirthValid = checkNumberAndRange(placeOfBirth);
+        isPlaceOfBirthValid = areNumberAndRangeLegal(placeOfBirth);
     }
 
 

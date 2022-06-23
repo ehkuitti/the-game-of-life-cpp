@@ -64,7 +64,7 @@ int main()
     std::ifstream gameInstructions("instructions.txt");
     std::ifstream gameCredits("credits.txt");
 
-    // Standard strings
+    // Standard template library strings
     std::string playerName = "";
     std::string placeOfBirth = "";
 

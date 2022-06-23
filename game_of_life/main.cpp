@@ -89,7 +89,7 @@ int main()
     {
         if (!askName(playerName))
         {
-            errorEmptyName();
+            errorNoInput();
         }
         else
         {

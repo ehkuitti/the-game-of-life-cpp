@@ -26,6 +26,7 @@
  * own functions and functions within std namespace, e.g. std::max and max.
  */
 
+// Includes for my own files
 #include "askPlayerName.cpp"
 #include "askPlayerPlaceOfBirth.cpp"
 #include "fileReadingErrors.cpp"
@@ -33,6 +34,7 @@
 #include "generateWelcomeMessage.cpp"
 #include "valueChecks.cpp"
 
+// Includes for std
 #include <ctime>
 #include <fstream>
 #include <iostream>

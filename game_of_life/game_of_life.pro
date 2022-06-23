@@ -19,6 +19,4 @@ HEADERS +=
 
 DISTFILES += \
     credits.txt \
-    instructions.txt \
-    questions_for_the_player/Uusi tekstiasiakirja.txt \
-    questions_for_the_player/Uusi tekstiasiakirja.txt
+    instructions.txt

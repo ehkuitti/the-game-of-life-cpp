@@ -89,8 +89,11 @@ int main()
     generateRandomValue(switchOperator);
     generateRandomWelcomeMessage(playerName, switchOperator);
 
-    // The game asks for the player's place of birth and checks whether the
-    // input contains numbers to produce an error in such a case.
+    /* The game asks for the player's place of birth and checks whether the
+     * input contains numbers to produce an error in such a case.
+     * Place of birth is valid when it's a) a number and b) within the range of
+     * 1-3
+     */
     while (!isPlaceOfBirthValid)
     {
         askPlaceOfBirth(placeOfBirth);

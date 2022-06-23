@@ -78,7 +78,7 @@ bool areNumberAndRangeLegal (std::string& strAnswer)
     return true;
 }
 
-void hasPlayerInputtedAName(std::string& playerName) {
+void askAndCheckPlayerName(std::string& playerName) {
 
     bool isNameEmpty = true;
 

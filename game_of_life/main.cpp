@@ -82,7 +82,7 @@ int main()
 
      // The game starts by asking for the player's name and checking wheter it
      // is empty, i.e. the player didn't input anything
-    hasPlayerInputtedAName(playerName);
+    askAndCheckPlayerName(playerName);
 
     // Once the player has inputted a name, the game prints a welcome message
     // by generating a random number and using it as a switch operator

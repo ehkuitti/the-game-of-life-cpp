@@ -24,6 +24,15 @@
  *
  * - Please don't enable using namespace std. This is to avoid confusion between
  * own functions and functions within std namespace, e.g. std::max and max.
+ *
+ * Comments
+ *
+ * - Please use the double-slash comment notation only in comments of no more
+ * than two lines.
+ * - If you feel the need to write longer comments, you should use the
+ * star-slash notation. Please note that with this notation the opening and the
+ * ending slahes have to be place on their respective rows and every comment
+ * line must start with an asterisk(*) like in this comment.
  */
 
 // Includes for my own files
